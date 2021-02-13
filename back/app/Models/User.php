@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Http\Request;
 
 class User extends Authenticatable
 {
@@ -40,4 +41,57 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public function createUser(Request $request){
+        $this->name = $request->name;
+        $this->email = $request->email;
+        $this->contact = $request->contact;
+        $this->lolUsername = $request->lolUsername;
+        $this->lolEmail = $request->lolEmail;
+        $this->password = $request->password;
+        $this->save();
+    }
+    public function updateUser(Request $request){
+        if ($request->name){
+            $this->name = $request->name;  
+        }
+        if ($request->email){
+            $this->email = $request->email;
+        }
+        if ($request->contact){
+            $this->contact = $request->contact;
+        }
+        if ($request->lolUsername){
+            $this->lolUsername = $request->lolUsername;
+        }
+        if ($request->lolEmail){
+            $this->lolEmail = $request->lolEmail;
+        }
+        if ($request->password){
+            $this->password = $request->password;
+        }
+        $this->save();
+
+    }
+
+    public function userInvites(){
+        return $this->belongsToMany('App\Models\User', 'invites', 'invited', 'makeInvite' );
+        }
+
+    public function userInvited(){
+         return $this->belongsToMany('App\Models\User', 'invites', 'invited', 'makeInvite' );
+            }
+
+     public function post(){
+         return $this->hasMany('App\Models\Post');
+        }
+
+     public function event(){
+         return $this->hasMany('App\Models\Event');
+        }
+    public function comment(){
+        return $this->hasMany('App\Models\Comment');
+        }
+    
+    
+
 }
