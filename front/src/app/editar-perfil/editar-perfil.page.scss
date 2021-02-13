@@ -1,0 +1,212 @@
+#shacoBg {
+    position:fixed;
+}
+
+.titleCard{
+    text-align: center;
+    width:170px;
+    height:47px;
+    border-radius:15px;
+    --background: #070B2D;
+    border: 1px solid #00CEA9;
+    color:#FDFAFA;
+    margin-left:25%;
+    margin-top:15%; 
+}
+
+.titleText{
+    margin-top:5.5%;
+    font-size: 1.7em;
+}
+
+.imgTitleCard{
+    text-align: center;
+    width:115px;
+    height:35px;
+    border-radius:15px;
+    --background: #070B2D;
+    border: 1px solid rgba(0, 206, 169, 0.5);
+    color:#FDFAFA;
+    margin-left:9%;
+    margin-top:14%; 
+    margin-bottom:0;
+}
+
+.imgTitle{
+    margin-top:3%;
+}
+
+.imgCard{
+    width:304px;
+    margin-left:9%;
+    margin-top:3%;
+    height:330px;
+}
+
+.instruction{
+    color:#FDFAFA;
+    margin-left:4%;
+    font-size:1.4em;
+    margin-bottom:1%;
+}
+
+.userImgCol{    
+    margin-left:4%;
+}
+
+.chooseChampionText{
+    color:#00CEA9;
+    font-size:1.2em;
+    margin-bottom:4%;
+    margin-top:4%;
+}
+
+.selectChampion{
+    background-color:#070B2D;
+    border: 1px solid rgba(112, 0, 255, 0.64);
+    border-radius: 8px;
+    height:35px;
+    width:150px;
+    font-size:1.2em;
+}
+
+.bgImgCol{
+    margin-left:3%;
+}
+
+.laneTitleCard{
+    text-align: center;
+    width:85px;
+    height:35px;
+    border-radius:15px;
+    --background: #070B2D;
+    border: 1px solid rgba(0, 206, 169, 0.5);
+    color:#FDFAFA;
+    margin-left:9%;
+    margin-top:14%; 
+    margin-bottom:0;
+}
+
+.laneTitle{
+    margin-top:4%;
+}
+
+.laneCard{
+    width:304px;
+    margin-left:9%;
+    margin-top:3%;
+    height:250px;
+}
+
+
+.selectLane{
+    background-color:#070B2D;
+    border: 1px solid rgba(112, 0, 255, 0.64);
+    border-radius: 8px;
+    height:40px;
+    width:210px;
+    margin-left: 12%;
+    font-size:1.2em;
+}
+
+.chooseLaneTitle{
+    padding-bottom:0;
+}
+
+.chooseLaneCol{
+    padding-top:0;
+}
+
+.discTitleCard{
+    text-align: center;
+    width:100px;
+    height:35px;
+    border-radius:15px;
+    --background: #070B2D;
+    border: 1px solid rgba(0, 206, 169, 0.5);
+    color:#FDFAFA;
+    margin-left:9%;
+    margin-top:14%; 
+    margin-bottom:0;
+}
+
+.discTitle{
+    margin-top:4%;
+}
+
+.discCard{
+    width:304px;
+    margin-left:9%;
+    margin-top:3%;
+}
+
+.discIcon{
+    color:#7289DA;
+}
+
+.discIconCol{
+    margin-top:3%;
+    padding:0;
+    margin-left:2%;
+}
+
+.discInput{
+    padding-left:10px !important;
+}
+
+.discInputCard{
+    background-color:#070B2D;
+    border: 1px solid rgba(112, 0, 255, 0.64);
+    border-radius: 8px;
+    height:40px;
+    width:210px;
+    margin:0;
+    font-size:1.2em;
+}    
+
+.privTitleCard{
+    text-align: center;
+    width:135px;
+    height:37px;
+    border-radius:15px;
+    --background: #070B2D;
+    border: 1px solid rgba(0, 206, 169, 0.5);
+    color:#FDFAFA;
+    margin-left:9%;
+    margin-top:14%; 
+    margin-bottom:0;
+}
+
+.privTitle{
+    margin-top:4%;
+}
+
+.privCard{
+    width:304px;
+    margin-left:9%;
+    margin-top:3%;
+    height:270px;
+    margin-bottom:0;
+}
+
+.selectPriv{
+    background-color:#070B2D;
+    border: 1px solid rgba(112, 0, 255, 0.64);
+    border-radius: 8px;
+    height:40px;
+    width:210px;
+    margin-left: 12%;
+    font-size:1.2em;
+}
+
+.saveButton{
+    margin-left:30%;
+    margin-top:12%;
+    margin-bottom:12%;
+    --background:#00CEA9;
+    color:black;
+}
+
+select{
+    padding-left:10px;
+}

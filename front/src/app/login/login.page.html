@@ -1,0 +1,71 @@
+
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+
+<ion-content>
+
+  <img id="dariusBg" src="../assets/icon/darius.png">
+
+  <ion-grid>
+    <ion-row>
+      <ion-col class="titleCol">
+        <h1 class="loginTitle">GoTeam!</h1>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+    <ion-grid>
+      <ion-row>
+        <ion-col class="instructionCol">
+          <h3 class="inputInstruction">Nome ou Email:</h3>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <form [formGroup]="loginForm" (ngSubmit) = "submitForm(loginForm)">
+      <ion-card class="inputCard">
+          <ion-input class="inputTextLogin" placeholder="Nome ou Email" type="text" formControlName="name"></ion-input>
+      </ion-card>
+      
+
+      <ion-grid >
+        <ion-row>
+          <ion-col class="instructionCol">
+            <h3 class="inputInstruction">Senha:</h3>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+        
+        
+      <ion-card class="inputCard">
+        <ion-input class="inputTextLogin" placeholder="Senha" type="password" formControlName="password"></ion-input>
+      </ion-card>
+        
+
+      <ion-grid>
+        <ion-row>
+          <ion-col class="forgotPasswordCol">
+            <h5 class="forgotPasswordText">Esqueceu a senha?</h5>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <ion-button type="submit" expand="block" [disabled]="loginForm.invalid" class="loginButton">Login</ion-button>
+    </form>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col class="line1"></ion-col>
+      <ion-col size="1.5" class="or">ou</ion-col>
+      <ion-col class="line2"></ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-button expand="block" class="registerButton">Cadastre-se</ion-button>
+
+  
+
+
+</ion-content>

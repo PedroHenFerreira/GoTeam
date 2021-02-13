@@ -1,7 +1,8 @@
 import { TabMenuComponent } from '../components/tab-menu/tab-menu.component';
+import { CommentComponent } from '../components/comment/comment.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
@@ -14,8 +15,9 @@ import { ProfilePage } from './profile.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    ProfilePageRoutingModule
+    ProfilePageRoutingModule,
+    ReactiveFormsModule
   ],
-  declarations: [ProfilePage,TabMenuComponent]
+  declarations: [ProfilePage,TabMenuComponent,CommentComponent]
 })
 export class ProfilePageModule {}

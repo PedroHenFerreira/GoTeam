@@ -1,0 +1,310 @@
+#shacoBg {
+    position:fixed;
+    
+}
+
+.userCard{
+    margin-left:11%;
+    margin-right:11%;
+    border-radius:15px;
+    height:30%;
+}
+
+#followCard{
+    --background:#070B2D;
+    border-radius:15px;
+    margin-left:10%;
+    margin-right:10%;   
+}
+
+h3,h5,h4,h6,p{
+    color:white;
+}
+
+#settingsCol{
+    margin-top:5%;
+    margin-right:2%;
+}
+
+.settingsIcon{
+    color:white;
+}
+
+#userImg{
+    border-radius:50%;
+}
+
+#userSubName{
+    margin-top:0;
+    color:#818181;
+}
+
+#userName{
+    margin-bottom:1%;
+}
+
+#followersNumber, #followingNumber{
+    font-size:1.7em;
+    font-weight:600;
+    margin-bottom:1%;
+    
+}
+
+#followersNumber{
+    margin-left:20%
+    
+}
+
+#followingNumber{
+    margin-left:11%;
+    
+}
+
+#followers,#following{
+    margin-top:0;
+}
+
+#followersCol{
+    margin-left:13%;
+    padding:0;
+    padding-bottom:2%;
+    
+}
+
+#followingCol{
+    padding:0;
+    padding-bottom:2%;
+}
+
+#followRow{
+    --background:#1F2449;
+}
+
+.infosText{
+    text-align:center;
+    color:#00CEA9;
+    margin-bottom:3.2%;
+}
+
+.infosSubText{
+    text-align:center;
+    margin-bottom:0;
+    margin-top:0;
+}
+
+#solo{
+    text-align:center;
+    color:#00CEA9;
+    margin-top:25%;
+}
+
+#silver{
+    text-align:center;
+    margin-bottom:0;
+    margin-top:13%;
+}
+
+#rankImg {
+    margin-left:17%;
+}
+
+#jgImg{
+    margin-top:15%;
+    margin-left:25%;
+}
+
+#midImg{
+    margin-top:15%;
+    margin-left:28%;
+}
+
+.infos{
+    --background:white;
+}
+
+.discord{
+    display:flex;
+    justify-content:space-between;
+    --background:#070B2D;
+    border:1px solid #00CEA9;
+    border-radius:15px;
+    width:85%;
+    height:6%;
+    margin:0;
+    margin-left:7%;
+    margin-top:15%;
+    margin-bottom:20%;
+}
+
+.discOrg{
+    margin-left:5%;
+}
+
+.discUserOrg{
+    display:flex;
+    margin-right:18%;
+    
+}
+
+.disc{
+    color:#00CEA9;
+    margin-top:12%;
+}
+
+.discNumbers{
+    color:#818181;
+    
+    margin-top:6%;
+}
+
+.discUser{
+    
+    margin-top:6%;
+}
+
+#honor{
+    display:flex;
+    justify-content:space-between;
+    --background:#070B2D;
+    border:1px solid #00CEA9;
+    border-radius:15px;
+    width:25%;
+    height:4.5%;
+    margin:0;
+    margin-left:7%;
+    margin-top:12%;
+}
+
+.honorTitle{
+    margin:0;
+    margin-left:10%;
+    margin-top:3%;
+}
+
+.honorLevel{
+    display:flex;
+    --background:#070B2D;
+    border:1px solid #00CEA9;
+    border-radius:15px;
+    width:320px;
+    margin-left:2%;
+    margin-right:0;
+    height: 90px;
+    
+}
+
+.honorText{
+    text-align:center;
+    margin-bottom:20%;
+    color:#00CEA9;
+    font-size:1.4em;
+    margin-left:2%;
+}
+
+.honorNumbers{
+    text-align:center;
+    margin-top:30%;
+}
+
+.honorImg{
+    margin-top:5%;
+}
+
+.honorCategory{
+    display:flex;
+    align-items:center;
+    --background:#070B2D;
+    border:1px solid #00CEA9;
+    border-radius:15px;
+    width:220px;
+    margin-left:17%;
+    margin-right:0;
+    height: 70px;
+    margin-bottom:5%;
+    margin-top:0;
+}
+
+.honorCatText{
+    margin-left:15%;
+    font-size:1.2em;
+    text-align: center;
+    color:#00CEA9;
+}
+
+.honorCatNumbers{
+    font-size:1.2em;
+    text-align:center;
+    border-left:1px solid white;
+    margin-right:2%;
+}
+
+.comments{
+        display:flex;
+        justify-content:space-between;
+        --background:#070B2D;
+        border:1px solid #00CEA9;
+        border-radius:15px;
+        width:38%;
+        height:5%;
+        margin:0;
+        margin-left:7%;
+        margin-top:15%;
+}
+
+.commentCardBg{
+    height:80%;
+}
+
+.commentsTitle{
+    margin:0;
+    margin-top:5%;
+    margin-left:4%;
+}
+
+.commentInput{
+    padding-left:10px !important;
+}
+
+.orgComments{
+    margin-top:5%;
+}
+
+.commentsImg{
+    border-radius:50%;
+    
+}
+
+.userCommentsCard{
+    --background:#070B2D;
+    border: 1px solid rgba(112, 0, 255, 0.36);
+    border-radius:8px;
+    margin:0;
+    height:70px;
+}
+
+.userComment{
+    color:#818181;
+    margin-left:4%;
+    margin-top:2%;
+}
+
+.pubComment{
+    text-align:end;
+}
+
+.pubText{
+    margin-top:1%;
+    margin-bottom:0;
+    color:black;
+}
+
+.pubButton{
+    margin:0;
+    --background:#00CEA9;
+    border-radius:10px;
+    border:1px solid black;
+    height:95%;
+    width:25%;
+}
+
+
