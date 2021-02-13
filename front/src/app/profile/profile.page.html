@@ -9,11 +9,242 @@
 
 
 
-
 <ion-content>
+
+  <img id="shacoBg" src="../assets/icon/shacoringa.png">
   
-    <ion-tabs>
-      <app-tab-menu></app-tab-menu>
-    </ion-tabs>
+  <ion-card class="userCard">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="3.5" id="userImgCol">
+          <img id="userImg" src="../assets/icon/ShacoLoadScreen_7.jpg">
+        </ion-col>
+        <ion-col  id="userNamesCol">
+          <h3 id="userName">Behïnd you</h3>
+          <h6 id="userSubName">@BehindYou</h6>
+        </ion-col>
+        <ion-col size="2" id="settingsCol">
+          <ion-icon class="settingsIcon" name="settings-sharp" size="large"></ion-icon>
+        </ion-col>
+      </ion-row>
+      
+      <ion-card id="followCard">
+        <ion-row >
+          <ion-col size="5" id="followersCol">
+            <h5 id="followersNumber">564</h5>
+            <h6 id="followers">Seguidores</h6>
+          </ion-col>
+          <ion-col size="5" id="followingCol">
+            <h5 id="followingNumber">458</h5>
+            <h6 id="following">Seguindo</h6>
+          </ion-col>
+        </ion-row>
+      </ion-card>
+
+    </ion-grid>
+  </ion-card>  
+
+  <ion-grid>
+    <ion-row>
+      
+      <ion-col class="infos">
+        <h4 id="solo">Solo/duo</h4>
+        <h5 id="silver">Prata II</h5>
+        <img id="rankImg" src="../assets/icon/prata.png">
+      </ion-col>
+      <ion-col class="infos">
+        <h4 class="infosText">Rota primária</h4>
+        <h5 class="infosSubText">Jungle</h5>
+        <img id="jgImg" src="../assets/icon/jungle.png">
+      </ion-col>
+      <ion-col class="infos">
+        <h4 class="infosText">Rota secundária</h4>
+        <h5 class="infosSubText">Mid</h5>
+        <img id="midImg" src="../assets/icon/mid.png">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-card class="discord">
+    <div class="discOrg">
+      <h4 class="disc">Discord:</h4>
+    </div>
+    <div class="discUserOrg">
+      <h4 class="discUser">beventura</h4>
+      <h4 class="discNumbers">#5866</h4>
+    </div>
+  </ion-card>
+
+  <ion-card id="honor">
+    <h3 class="honorTitle">Honras</h3>
+  </ion-card>
   
+
+  <ion-card>
+    <ion-grid>
+      <ion-row>
+        <ion-card class="honorLevel">
+          <ion-col><h4 class="honorText">Nível de honra</h4></ion-col>
+          <ion-col><h4 class="honorNumbers">4.6 / 5</h4></ion-col>
+          <ion-col><img class="honorImg" src="../assets/icon/honra.png"></ion-col>
+       </ion-card>
+      </ion-row>
+      
+      <ion-row>
+        <ion-card class="honorCategory">
+          <ion-col><h4 class="honorCatText">Amigável</h4></ion-col>
+          <ion-col><h4 class="honorCatNumbers">89</h4></ion-col>
+        </ion-card>
+      </ion-row>
+      <ion-row>
+        <ion-card class="honorCategory">
+          <ion-col><h4 class="honorCatText">Ótimas chamadas</h4></ion-col>
+          <ion-col><h4 class="honorCatNumbers">96</h4></ion-col>
+        </ion-card>
+      </ion-row>
+      <ion-row>
+        <ion-card class="honorCategory">
+          <ion-col><h4 class="honorCatText">Manteve a calma</h4></ion-col>
+          <ion-col><h4 class="honorCatNumbers">78</h4></ion-col>
+        </ion-card>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+  
+  <ion-card class="comments">
+    <h3 class="commentsTitle">Comentários</h3>
+  </ion-card>
+  
+  <form [formGroup]="commentForm" (ngSubmit) = "submitForm(commentForm)">
+    <ion-card class="commentCardBg">
+      <ion-grid>
+        <ion-row class="orgComments">
+          <ion-col size="2.5"><img class="commentsImg" src="../assets/icon/ShacoLoadScreen_7.jpg"></ion-col>
+          <ion-col>
+            <ion-card class="userCommentsCard">
+              <ion-textarea wrap="soft" class="commentInput" type="text" formControlName="comment" placeholder="Comentar"></ion-textarea> 
+            </ion-card>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="pubComment">
+              <ion-button type="submit" class="pubButton">
+                <h5 class="pubText">Publicar</h5>
+              </ion-button>
+            </ion-col>
+        </ion-row>
+      </ion-grid>
+
+    <app-comment></app-comment>
+    <app-comment></app-comment>
+    <app-comment></app-comment>
+    
+  
+  </ion-card>
+  </form>
+
+  <h3 class="feedTitle">Feed</h3>
+  
+  <ion-card>
+    <ion-grid>
+      <ion-row>
+        <ion-col><img src="../assets/icon/ShacoLoadScreen_7.jpg"></ion-col>
+        <ion-col>
+          <h2>BehindYou</h2>
+          <p>Postado há 20 minutos</p>
+        </ion-col>
+        <ion-col><ion-icon name="ellipsis-vertical"></ion-icon></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <h4>Shaco melhor campeão! Agora jogo com ele suporte também!</h4>
+          <h6>#ShacoLovers #OlheAtrasDeVoce</h6>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-icon name="heart-outline" size="large"></ion-icon>
+          <h4>612</h4>
+        </ion-col>
+        <ion-col>
+          <ion-icon name="chatbubble-outline" size="large"></ion-icon>
+          <h4>108</h4>
+        </ion-col>
+        <ion-col>
+          <ion-icon name="chatbubble-outline" size="large"></ion-icon>         
+          <h4>450</h4>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+
+  <ion-card>
+    <ion-grid>
+      <ion-row>
+        <ion-col><img src="../assets/icon/ShacoLoadScreen_7.jpg"></ion-col>
+        <ion-col>
+          <h2>BehindYou</h2>
+          <p>Postado há 20 minutos</p>
+        </ion-col>
+        <ion-col><ion-icon name="ellipsis-vertical"></ion-icon></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <h4>Shaco melhor campeão! Agora jogo com ele suporte também!</h4>
+          <h6>#ShacoLovers #OlheAtrasDeVoce</h6>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-icon name="heart-outline" size="large"></ion-icon>
+          <h4>612</h4>
+        </ion-col>
+        <ion-col>
+          <ion-icon name="chatbubble-outline" size="large"></ion-icon>
+          <h4>108</h4>
+        </ion-col>
+        <ion-col>
+          <ion-icon name="chatbubble-outline" size="large"></ion-icon>         
+          <h4>450</h4>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+
+  <ion-card>
+    <ion-grid>
+      <ion-row>
+        <ion-col><img src="../assets/icon/ShacoLoadScreen_7.jpg"></ion-col>
+        <ion-col>
+          <h2>BehindYou</h2>
+          <p>Postado há 20 minutos</p>
+        </ion-col>
+        <ion-col><ion-icon name="ellipsis-vertical"></ion-icon></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <h4>Shaco melhor campeão! Agora jogo com ele suporte também!</h4>
+          <h6>#ShacoLovers #OlheAtrasDeVoce</h6>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-icon name="heart-outline" size="large"></ion-icon>
+          <h4>612</h4>
+        </ion-col>
+        <ion-col>
+          <ion-icon name="chatbubble-outline" size="large"></ion-icon>
+          <h4>108</h4>
+        </ion-col>
+        <ion-col>
+          <ion-icon name="chatbubble-outline" size="large"></ion-icon>         
+          <h4>450</h4>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
 </ion-content>
+
+
+  <app-tab-menu></app-tab-menu>
+

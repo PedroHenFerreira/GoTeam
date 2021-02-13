@@ -1,0 +1,104 @@
+#dariusBg{
+    position: fixed;
+}
+
+h1,h3,h5,.or,p{
+    color:#FDFAFA;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.titleCol{
+    margin-top:45%;
+}
+
+.loginTitle{
+    text-align:center;
+    font-size:2.7em;
+    font-weight: bold;
+    margin-bottom:10%;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.inputInstruction{
+    font-size:1.3em;
+    margin-bottom:0;
+    margin-left:10%;
+}
+
+.instructionCol{
+    padding-bottom:0;
+}
+
+.inputCard{
+    --background: rgba(196, 196, 196, 0.5);
+    border-radius: 10px;
+    width:280px;
+    height:48px;
+    margin-bottom:0;
+    margin-left:12%;
+    margin-top:0;
+    margin-right:0;
+}
+
+.inputTextLogin{
+    color:#FDFAFA;
+    font-size:1.3em;
+    padding-left:10px !important;
+    padding-top:5px !important;
+}
+
+.inputText{
+    margin-left:5%;
+    margin-top:6%;
+    font-size:1.1em;
+}
+
+.forgotPasswordCol{
+    text-align:end;
+}
+
+.forgotPasswordText{
+    font-size:0.95em;
+    margin-right:12%;
+}
+
+.loginButton{
+    width:280px;
+    border-radius:10px;
+    margin-left:12%;
+    height:50px;
+    --background:black;
+    font-size:1.3em;
+    margin-bottom:5%;
+    letter-spacing: 3px;
+}
+
+.registerButton{
+    width:280px;
+    border-radius:10px;
+    margin-left:12%;
+    height:50px;
+    --background:#FDFAFA;
+    font-size:1.3em;
+    color:#070B2D;
+    margin-top:5%;
+    letter-spacing: 3px;
+}
+
+.or{
+    text-align: center;
+}
+
+.line1{
+    margin-top:4%;
+    margin-left:12%;
+    margin-right:4%;
+    border-top:2px solid #FDFAFA;
+}
+
+.line2{
+    margin-top:4%;
+    margin-right:12%;
+    margin-left:4%;
+    border-top:2px solid #FDFAFA;
+}

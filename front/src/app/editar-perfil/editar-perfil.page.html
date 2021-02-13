@@ -1,0 +1,201 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>editar perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <img id="shacoBg" src="../assets/icon/shacoringa.png">
+
+  <ion-card class="titleCard">
+    <h2 class="titleText">Editar Perfil</h2>
+  </ion-card>
+
+  <ion-card class="imgTitleCard">
+    <h3 class="imgTitle">Imagens</h3>
+  </ion-card>
+
+  <form [formGroup]="editProfileForm" (ngSubmit) = "submitForm(editProfileForm)">
+    <ion-card class="imgCard">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <h3 class="instruction">Imagem de perfil</h3>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="3.5" class="userImgCol">
+            <img class="userImg" src="../assets/icon/user-img.png">
+          </ion-col>
+          <ion-col class="chooseChampionCol"> 
+              <p class="chooseChampionText">Escolha um campeão</p>
+              <select formControlName="profilePicture" class="selectChampion" name="champions">
+                <option value="Annie">Annie</option>
+                <option value="Garen">Garen</option>
+                <option value="Hecarim">Hecarim</option>
+                <option value="Jhin">Jhin</option>
+                <option value="Rammus">Rammus</option>
+                <option value="Shaco">Shaco</option>
+                <option value="Yasuo">Yasuo</option>
+              </select>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <h3 class="instruction">Plano de fundo</h3>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="3.5" class="bgImgCol">
+            <img class="bgImg" src="../assets/icon/default-img.png">
+          </ion-col>
+          <ion-col class="chooseChampionCol">
+              <p class="chooseChampionText">Escolha um campeão</p>
+              <select formControlName="backgroundImage" class="selectChampion" name="champions">
+                <option value="annie">Annie</option>
+                <option value="garen">Garen</option>
+                <option value="hecarim">Hecarim</option>
+                <option value="jhin">Jhin</option>
+                <option value="rammus">Rammus</option>
+                <option value="shaco">Shaco</option>
+                <option value="yasuo">Yasuo</option>
+              </select>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card>
+
+    <ion-card class="laneTitleCard">
+      <h3 class="laneTitle">Rotas</h3>
+    </ion-card>
+
+    <ion-card class="laneCard">
+      
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <h3 class="instruction">Rota Primária</h3>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="chooseLaneCol">
+            
+              <select  formControlName="mainLane" class="selectLane" name="lanes">
+                <option value="top">Top </option>
+                <option value="jungle">Jungle</option>
+                <option value="mid">Mid</option>
+                <option value="adc">Adc</option>
+                <option value="suporte">Suporte</option>
+              </select>
+            
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <h3 class="instruction">Rota Secundária</h3>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="chooseLaneCol">
+            
+              <select  formControlName="secondaryLane" class="selectLane" name="lanes">
+                  <option value="top"><p class="lane">Top</p></option>
+                  <option value="jungle">Jungle</option>
+                  <option value="mid">Mid</option>
+                  <option value="adc">Adc</option>
+                  <option value="supp">Suporte</option>
+                
+              </select>
+            
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+    </ion-card>
+
+    <ion-card class="discTitleCard">
+      <h3 class="discTitle">Discord</h3>
+    </ion-card>
+
+    <ion-card class="discCard">
+      
+        <ion-grid>
+          <ion-row>
+            <ion-col size="1.5" class="discIconCol">
+              <ion-icon class="discIcon" size="large" name="logo-discord"></ion-icon>
+            </ion-col>
+            <ion-col size="8" class="discInputCol">
+                <ion-card class="discInputCard">
+                  <ion-textarea rows="20" cols="20" class="discInput" type="text" formControlName="username" placeholder="username#1234"></ion-textarea>
+                </ion-card>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      
+    </ion-card>
+
+    <ion-card class="privTitleCard">
+      <h3 class="privTitle">Privacidade</h3>
+    </ion-card>
+
+    <ion-card class="privCard">
+
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <h3 class="instruction">Quem pode ver meus posts?</h3>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="choosePrivCol">
+            
+              <select  formControlName="postPrivacy" class="selectPriv" name="privacy">
+                <option value="everyone">Todos</option>
+                <option value="friendsOnly">Apenas amigos</option>
+                <option value="friendsOfFriends">Amigos de amigos</option>
+                <option value="Nobody">Ninguém</option>
+              </select>
+            
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <h3 class="instruction">Quem pode comentar no meu perfil?</h3>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="choosePrivCol">
+            
+              <select  formControlName="commentPrivacy" class="selectPriv" name="privacy">
+                <option value="everyone">Todos</option>
+                <option value="friendsOnly">Apenas amigos</option>
+                <option value="friendsOfFriends">Amigos de amigos</option>
+                <option value="Nobody">Ninguém</option>
+              </select>
+            
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+    </ion-card>
+
+    <ion-button type="submit" class="saveButton">
+      Salvar alterações
+    </ion-button>
+  </form>
+</ion-content>
+
+
+
+
+
