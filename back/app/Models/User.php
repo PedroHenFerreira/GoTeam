@@ -10,9 +10,11 @@ use Illuminate\Http\Request;
 use Laravel\Passport\HasApiTokens;
 
 
+
+
 class User extends Authenticatable
 {
-    use HasFactory, Notifiable;
+    use HasFactory, Notifiable, HasApiTokens;
 
     /**
      * The attributes that are mass assignable.
@@ -49,7 +51,7 @@ class User extends Authenticatable
         $this->contact = $request->contact;
         $this->lolUsername = $request->lolUsername;
         $this->lolEmail = $request->lolEmail;
-        $this->password = $request->password;
+        $this->password = bcrypt($request->password);
         $this->save();
     }
     public function updateUser(Request $request){
