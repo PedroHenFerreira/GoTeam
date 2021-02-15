@@ -34,6 +34,10 @@ const routes: Routes = [
   {
     path: 'editar-perfil',
     loadChildren: () => import('./editar-perfil/editar-perfil.module').then( m => m.EditarPerfilPageModule)
+  },
+  {
+    path: 'criar-post',
+    loadChildren: () => import('./criar-post/criar-post.module').then( m => m.CriarPostPageModule)
   }
 
 
