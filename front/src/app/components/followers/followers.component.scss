@@ -1,0 +1,34 @@
+.usersCardBg{
+    border-radius: 20px;
+    width:340px;
+}
+
+.profileImg{
+    margin-top:10%;
+    margin-left:5%;
+}
+
+.usernameCol{
+    margin-left:1%;
+}
+.username{
+    font-size:1.6em;
+    color:#FDFAFA;
+    margin-bottom:0;
+}
+
+.subUsername{
+    font-size:1.2em; 
+    margin-top:2%;
+    color:#818181;   
+}
+
+.followButton{
+    color:black;
+    border-radius:50px;
+    --background:#00CEA9;
+    width:90px;
+    height:27px;
+    font-size:0.9em;
+    margin-top:40%;
+}

@@ -1,9 +1,53 @@
-<ion-header class="ion-no-border">
-  <app-header></app-header>
-</ion-header>
+
 
 <ion-content>
+  
+  <img class="listBg" src="../assets/icon/listBg.png">
+
+  <ion-segment [(ngModel)]="type" (ionChange)="segmentChanged($event)" scrollable>
+    
+    <ion-segment-button class="segmentButton" value="followers" checked>
+      <ion-label>Seguidores</ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button class="segmentButton" value="following">
+      <ion-label>Seguindo</ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button class="segmentButton" value="duo-request">
+      <ion-label>Convites</ion-label>
+    </ion-segment-button>
+
+  </ion-segment>
+
+<div [ngSwitch]="type">
+    <ion-card class="bgCard" *ngSwitchCase="'followers'">      
+        <app-followers></app-followers>
+        <app-followers></app-followers>
+        <app-followers></app-followers>
+        <app-followers></app-followers>
+        <app-followers></app-followers>
+        <app-followers></app-followers>
+    </ion-card>
+
+    <ion-card class="bgCard" *ngSwitchCase="'following'">
+        <app-following></app-following>
+        <app-following></app-following>
+        <app-following></app-following>
+        <app-following></app-following>
+        <app-following></app-following>
+        <app-following></app-following>
+    </ion-card>
+
+    <ion-card class="bgCard" *ngSwitchCase="'duo-request'">
+        <app-duo-request></app-duo-request>
+        <app-duo-request></app-duo-request>
+        <app-duo-request></app-duo-request>
+        <app-duo-request></app-duo-request>
+        <app-duo-request></app-duo-request>
+        <app-duo-request></app-duo-request>
+    
+    </ion-card>
+  </div>
 
 </ion-content>
-
-<app-tab-menu></app-tab-menu>

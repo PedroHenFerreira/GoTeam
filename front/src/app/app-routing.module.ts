@@ -36,6 +36,7 @@ const routes: Routes = [
     loadChildren: () => import('./editar-perfil/editar-perfil.module').then( m => m.EditarPerfilPageModule)
   }
 
+
 ];
 
 @NgModule({
