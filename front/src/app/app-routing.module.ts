@@ -43,7 +43,14 @@ const routes: Routes = [
     path: 'comentarios',
     loadChildren: () => import('./comentarios/comentarios.module').then( m => m.ComentariosPageModule)
   },
-
+  {
+  path: 'criar-evento',
+    loadChildren: () => import('./criar-evento/criar-evento.module').then( m => m.CriarEventoPageModule)
+  },
+  {
+    path: 'eventos',
+    loadChildren: () => import('./eventos/eventos.module').then( m => m.EventosPageModule)
+  }
 ];
 
 @NgModule({

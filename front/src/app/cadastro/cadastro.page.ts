@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 class Cadastro {
   id: number;
@@ -7,7 +8,8 @@ class Cadastro {
 
 class Labels {
   label: string;
-  isPassword: boolean;
+  type: string;
+  formControlName: string;
 }
 
 @Component({
@@ -26,7 +28,19 @@ export class CadastroPage implements OnInit {
 
   buttonUrl: string;
 
-  constructor() { }
+  registerForm: FormGroup;
+
+  constructor(public formbuilder: FormBuilder) { 
+    this.registerForm = this.formbuilder.group({
+      userName: [null, [Validators.required]],
+      email: [null, [Validators.email, Validators.required]],
+      password: [null, [Validators.required]],
+      confirmPassword: [null, [Validators.required]],
+      userNameRiot: [null, [Validators.required]],
+      emailRiot: [null, [Validators.email, Validators.required]],
+      userNameDiscord: [null, [Validators.required]]
+    });
+   }
 
   ngOnInit() {
     this.cadastro = [
@@ -42,20 +56,24 @@ export class CadastroPage implements OnInit {
 
     this.labels = [
       {
-        label: 'Nome de usuário:',
-        isPassword: false
+        label: 'Nome de usuário',
+        type: 'text',
+        formControlName: 'userName'
       },
       {
-        label: 'E-mail:',
-        isPassword: false
+        label: 'E-mail',
+        type: 'text',
+        formControlName: 'email'
       },
       {
-        label: 'Senha:',
-        isPassword: true
+        label: 'Senha',
+        type: 'password',
+        formControlName: 'password'
       },
       {
-        label: 'Confirmar senha:',
-        isPassword: true
+        label: 'Confirmar senha',
+        type: 'password',
+        formControlName: 'confirmPassword'
       }
     ]
 
@@ -67,19 +85,32 @@ export class CadastroPage implements OnInit {
   prosseguirCadastro(): void {
     if (this.cadastro[0].bgImg === '../../assets/GoTeam Imagens/Cadastro1-bg.png'){
       this.cadastro[0].bgImg = "../../assets/GoTeam Imagens/Cadastro2-bg.png";
+      this.cadastro[0].id = 2;
       this.labels = [
         {
-          label: 'Nome da conta-Riot:',
-          isPassword: false
+          label: 'Nome da conta-Riot',
+          type: 'text',
+          formControlName: 'userNameRiot'
         },
         {
           label: 'E-mail da conta-Riot',
-          isPassword: false
+          type: 'text',
+          formControlName: 'emailRiot'
+        },
+        {
+          label: 'Discord',
+          type: 'text',
+          formControlName: 'userNameDiscord'
         }
       ];
       this.buttonLabel = 'Finalizar';
       this.buttonUrl = '/home';
     }
+  }
+
+  submitForm(form){
+    console.log(form);
+    console.log(form.value);
   }
 
 }
