@@ -36,15 +36,21 @@ const routes: Routes = [
     loadChildren: () => import('./editar-perfil/editar-perfil.module').then( m => m.EditarPerfilPageModule)
   },
   {
-    path: 'criar-evento',
+    path: 'lista-usuarios',
+    loadChildren: () => import('./lista-usuarios/lista-usuarios.module').then( m => m.ListaUsuariosPageModule)
+  },
+  {
+    path: 'comentarios',
+    loadChildren: () => import('./comentarios/comentarios.module').then( m => m.ComentariosPageModule)
+  },
+  {
+  path: 'criar-evento',
     loadChildren: () => import('./criar-evento/criar-evento.module').then( m => m.CriarEventoPageModule)
   },
   {
     path: 'eventos',
     loadChildren: () => import('./eventos/eventos.module').then( m => m.EventosPageModule)
   }
-
-
 ];
 
 @NgModule({

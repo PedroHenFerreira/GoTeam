@@ -1,0 +1,43 @@
+
+
+<ion-content>
+    <ion-grid class="headerGrid">
+      <ion-row>
+        <ion-col class="commentsTitleCol">
+          <h3 class="commentsTitle">Comentários</h3>
+        </ion-col>
+        <ion-col size="1.5" class="iconCol">
+          <ion-icon class="closeIcon" size="large" name="close-outline"></ion-icon>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    
+  
+  <form [formGroup]="commentForm" (ngSubmit) = "submitForm(commentForm)">
+      <ion-grid class="pubGrid">
+        <ion-row class="orgComments">
+          <ion-col class="commentsImgCol" size="2">
+            <img class="commentsImg" src="../assets/icon/ShacoLoadScreen_7.jpg"></ion-col>
+          <ion-col>
+            <ion-card class="userCommentsCard">
+              <ion-textarea wrap="soft" class="commentInput" type="text" formControlName="comment" placeholder="Comentar"></ion-textarea> 
+            </ion-card>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="pubComment">
+              <ion-button type="submit" class="pubButton">
+                <h5 class="pubText">Publicar</h5>
+              </ion-button>
+            </ion-col>
+        </ion-row>
+      </ion-grid>
+  </form>
+
+  <app-post-comentario></app-post-comentario>
+  <app-post-comentario></app-post-comentario>
+  <app-post-comentario></app-post-comentario>
+  <app-post-comentario></app-post-comentario>
+  <app-post-comentario></app-post-comentario>
+
+</ion-content>
