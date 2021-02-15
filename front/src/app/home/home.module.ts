@@ -10,7 +10,8 @@ import { HomePage } from './home.page';
 
 import { HeaderComponent } from '../components/header/header.component';
 import { CardEventoDestaqueComponent } from '../components/card-evento-destaque/card-evento-destaque.component'
-import { CardPostComponent } from '../components/card-post/card-post.component'
+import { CardPostComponent } from '../components/card-post/card-post.component';
+import { TabMenuComponent } from '../components/tab-menu/tab-menu.component';
 
 @NgModule({
   imports: [
@@ -19,6 +20,6 @@ import { CardPostComponent } from '../components/card-post/card-post.component'
     IonicModule,
     HomePageRoutingModule
   ],
-  declarations: [HomePage, HeaderComponent, CardEventoDestaqueComponent, CardPostComponent]
+  declarations: [HomePage, HeaderComponent, CardEventoDestaqueComponent, CardPostComponent, TabMenuComponent]
 })
 export class HomePageModule {}
