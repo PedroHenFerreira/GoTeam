@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header class="ion-no-border">
   <app-header></app-header>
 </ion-header>
 
@@ -13,19 +13,24 @@
 
   <img class="profile-img" src="../../assets/GoTeam Imagens/shaco.jpg">
 
-  <div class="eventos-em-destaque">Eventos em destaque:</div>
+  <ion-card class="card-criar-evento">
+    <ion-card-title class="criar-evento-title">Quer criar um evento?</ion-card-title>
+    <ion-button class="criar-evento-button" shape='round' color='secondary'>Criar evento</ion-button>
+  </ion-card>
 
-  <app-card-evento-destaque></app-card-evento-destaque>
+  <div class="eventos-em-destaque">Eventos em destaque:</div>
+  <div class="card-evento-destaque">
+    <app-card-evento-destaque></app-card-evento-destaque>
+  </div>
 
   <div class="eventos-oficiais">Eventos oficiais:</div>
-
   <app-card-evento-oficial></app-card-evento-oficial>
 
   <div class="eventos-comunidade">Eventos da comunidade:</div>
-
-  <div class="card-eventos-comunidade">
+  <div class="card-eventos">
     <app-card-eventos></app-card-eventos>
   </div>
+
 </ion-content>
 
 <app-tab-menu></app-tab-menu>
