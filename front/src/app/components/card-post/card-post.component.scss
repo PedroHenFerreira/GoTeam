@@ -1,0 +1,104 @@
+.post-feed {
+    margin-top: 0vh;
+    background-color: rgb(30, 30, 30);
+}
+
+.post-profile-img {
+    height: 60px;
+    width: 80px;
+    border-radius: 20px;
+
+    margin-left: 3vw;
+    margin-top: 2vh;
+}
+
+.post-user-name {
+    font-family: 'Ubuntu', sans-serif;
+    margin-left: 28vw;
+    margin-top: -7vh;
+
+    font-weight: 400;
+    font-size: 1.7em;
+    color: #fdfafa;
+}
+
+.post-time {
+    font-family: 'Ubuntu', sans-serif;
+    margin-left: 28vw;
+    margin-top: 1vh;
+    color: #c4c4c4;
+    font-weight: lighter;
+    font-size: 0.9em;
+}
+
+.post-text-field {
+    background-color: rgb(30, 30, 30);
+
+    border-color: #00CEA9;
+    border-style: solid;
+    margin-top: 2vh;
+    height: 140px;
+}
+
+.post-text {
+    font-family: 'Ubuntu', sans-serif;
+    color: #ffffff;
+    margin-top: 0.7vh;
+    margin-left: 2vw;
+
+    font-size: 1em;
+    font-weight: 400;
+}
+
+.button-like {
+    height: 28px;
+    width: 28px;
+    color: #fdfafa;
+    margin-left: 5vw;
+    margin-top: 0.25vh;
+}
+
+.num-like {
+    margin-left: 14vw;
+    margin-top: -3vh;
+    font-size: 1.1em;
+    color: #fdfafa;
+}
+
+.button-comment {
+    height: 25px;
+    width: 25px;
+    color: #fdfafa;
+    margin-top: 0.5vh;
+    margin-left: 5vw;
+}
+
+.num-comment {
+    margin-left: 14vw;
+    margin-top: -3vh;
+    font-size: 1.1em;
+    color: #fdfafa;
+}
+
+.button-share {
+    height: 30px;
+    width: 30px;
+    color: #fdfafa;
+    margin-left: 4vw;
+}
+
+.num-share {
+    margin-left: 14vw;
+    margin-top: -3.1vh;
+    font-size: 1.1em;
+    color: #fdfafa;
+}
+
+.post-setting-button {
+    height: 22px;
+    width: 22px;
+    color: #fdfafa;
+
+    margin-left: 5vw;
+    margin-top: 0.5vh;
+}

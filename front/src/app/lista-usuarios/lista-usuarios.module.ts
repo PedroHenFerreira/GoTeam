@@ -11,6 +11,9 @@ import { ListaUsuariosPageRoutingModule } from './lista-usuarios-routing.module'
 
 import { ListaUsuariosPage } from './lista-usuarios.page';
 
+import { HeaderComponent } from '../components/header/header.component';
+import { TabMenuComponent } from '../components/tab-menu/tab-menu.component';
+
 @NgModule({
   imports: [
     CommonModule,

@@ -1,0 +1,106 @@
+.card-evento-oficial {
+    margin-top: 9vh;
+}
+
+.card-img {
+    height: 193px;
+    width: 100%;
+}
+
+.title {
+    margin-left: 2vw;
+}
+
+.card-title {
+    margin-top: 2vh;
+    width: 188px;
+    text-align: left;
+
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.8em;
+    font-weight: 500;
+}
+
+.card-subtitle-1 {
+    margin: 0;
+    margin-top: 2vh;
+}
+
+.card-subtitle-2, .card-subtitle-1 {
+
+    text-align: left;
+
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+.card-subtitle-2 {
+    width: 200px;
+}
+
+.participar-button {
+    margin-left: 50vw;
+    margin-top: -21vh;
+
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.3em;
+    letter-spacing: 0.5vw;
+    font-weight: 700;
+
+    height: 45px;
+    width: 135px;
+}
+
+.saiba-mais {
+    margin-left: 50vw;
+    margin-top: -6vh;
+
+    color: #FDFAFA;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1em;
+    letter-spacing: 0.5vw;
+    font-weight: 400;
+}
+
+.button-like {
+    width: 28px;
+    height: 28px;
+    color: #fdfafa;
+    margin-left: -7vw;
+    margin-top: 0vh;
+}
+
+.num-like {
+    margin-top: -3vh;
+    margin-left: 10vw;
+    color: #fdfafa;
+}
+
+.button-comment {
+    width: 25px;
+    height: 25px;
+    margin-top: 0.2vh;
+    margin-left: -7vw;
+    color: #fdfafa;
+}
+
+.num-comment {
+    margin-top: -2.9vh;
+    margin-left: 10vw;
+    color: #fdfafa;
+}
+
+.button-share {
+    width: 28px;
+    height: 28px;
+    margin-left:-8vw;
+    margin-top: -0.1vh;
+    color: #fdfafa;
+}
+
+.num-share {
+    margin-top: -3.3vh;
+    margin-left: 10vw;
+    color: #fdfafa;
+}

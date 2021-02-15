@@ -1,0 +1,33 @@
+<!-- Essa tag tá vazia pq a pagina de cadastro não tem top-bar -->
+<ion-header>
+</ion-header>
+
+<ion-content>
+
+  <!-- Essa tag ta selecionando a imagem do background -->
+  <img class="img-background" src="{{cadastro[0].bgImg}}">
+
+  <div class="cadastro-titulo">
+    <p>Cadastro</p>
+  </div>
+
+  <!-- Essa tag cria o formulário de cadastro -->
+  <form class="register-form" >
+    <ion-list class="register-list" *ngFor='let label of labels'>
+      <ion-item class="input-box">
+        <ion-label class="input-label" position='stacked'>{{label.label}}</ion-label>
+        <ion-input type='text'></ion-input>
+      </ion-item>
+
+      <!-- <ion-item class="input-box" *ngIf='label.isPassword'>
+        <ion-label position='stacked'>{{label.label}}</ion-label>
+        <ion-input type='password'></ion-input>
+      </ion-item> -->
+    </ion-list>
+
+    <!-- Essa tag cria o botao com o link para a pagina home -->
+    <a href="{{buttonUrl}}">
+      <ion-button class="botao-enviar" type='submit' size='large' color='dark' (click)='prosseguirCadastro()'>{{buttonLabel}}</ion-button>
+    </a>
+  </form>
+</ion-content>
