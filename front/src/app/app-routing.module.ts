@@ -22,7 +22,11 @@ const routes: Routes = [
   {
     path: 'editar-perfil',
     loadChildren: () => import('./editar-perfil/editar-perfil.module').then( m => m.EditarPerfilPageModule)
+  },  {
+    path: 'lista-usuarios',
+    loadChildren: () => import('./lista-usuarios/lista-usuarios.module').then( m => m.ListaUsuariosPageModule)
   }
+
 
 ];
 
