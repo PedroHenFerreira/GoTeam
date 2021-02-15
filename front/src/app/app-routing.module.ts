@@ -34,6 +34,10 @@ const routes: Routes = [
   {
     path: 'editar-perfil',
     loadChildren: () => import('./editar-perfil/editar-perfil.module').then( m => m.EditarPerfilPageModule)
+  },
+  {
+    path: 'eventos',
+    loadChildren: () => import('./eventos/eventos.module').then( m => m.EventosPageModule)
   }
 
 
