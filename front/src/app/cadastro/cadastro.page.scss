@@ -1,4 +1,12 @@
 ion-content {
+    .arrow-back {
+        height: 30px;
+        width: 40px;
+
+        margin-left: 2vw;
+        margin-top: 1.5vh;
+    }
+
     .img-background {
         position: fixed;
         z-index: 0;
@@ -11,7 +19,7 @@ ion-content {
         font-family: 'Ubuntu', sans-serif;
         font-size: 3em;
         margin-left: 18.5vw;
-        margin-top: 18vh;
+        margin-top: 13vh;
         letter-spacing: 1.5vw;
         text-shadow: 3.5px 3.5px #000000;
         font-weight: bold;
@@ -19,22 +27,34 @@ ion-content {
 
     form {
         position: absolute;
+        --ion-item-background: transparent;
     
         ion-item {
-            opacity: 1;
+            opacity: 0.75;
         }
     }
 
     // ######################################### register-form #############################################
     .register-form {
-        margin-top: 39vh;
+        margin-top: 35vh;
         --ion-item-background: transparent;
         text-shadow: 3.5px 3.5px #000000;
     }
 
-    // ######################################### input-box #############################################
-    .input-box {
-        margin-top: 1.5vh;
+    // ######################################### register-list #############################################
+    .register-list{
+        margin-top: 0.7vh;
+        margin-left: 10vw;
+
+        height: 75px;
+        width: 300px;
+
+        border-radius: 15px;
+
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 1.2em;
+
+        opacity: 1;
     }
 
     // ######################################### input-label #############################################
