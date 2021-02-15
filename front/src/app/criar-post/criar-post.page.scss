@@ -1,0 +1,81 @@
+ion-content {
+    .grid {
+        margin-top: 1vh;
+    }
+
+    .close-icon {
+        height: 30px;
+        width: 30px;
+
+        margin-left: 2.5vw;
+
+        color: #00CEA9;
+    }
+
+    .cancel-button {
+        font-family: 'Ubuntu', sans-serif;
+
+        margin-left: 10vw;
+        margin-top: 0vh;
+        
+        font-size: 1em;
+        font-weight: 700;
+        letter-spacing: 0.5vw;
+
+        height: 30px;
+        width: 90px;
+    }
+
+    .post-button {
+        font-family: 'Ubuntu', sans-serif;
+
+        margin-left: 2vw;
+        margin-top: 0vh;
+        
+        font-size: 1em;
+        font-weight: 700;
+        letter-spacing: 0.5vw;
+
+        height: 30px;
+        width: 90px;
+    }
+
+    .text-input {
+        font-family: 'Ubuntu', sans-serif;
+        margin-left: 4vw;
+    }
+
+    .tab {
+        background-color: white;
+    }
+
+    .footer {
+        margin-top: -5.5vh;
+    }
+
+    .image-icon {
+        height: 40px;
+        width: 40px;
+        color: #00CEA9;
+
+        margin-top: 0.6vh;
+
+        margin-left: 2vw;
+    }
+
+    .video-icon {
+        height: 40px;
+        width: 40px;
+        color: #00CEA9;
+        
+        margin-left: 5vw;
+    }
+
+    .link-icon {
+        height: 40px;
+        width: 40px;
+        color: #00CEA9;
+
+        margin-left: 5vw;
+    }
+}

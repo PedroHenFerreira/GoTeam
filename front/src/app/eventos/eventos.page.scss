@@ -1,0 +1,67 @@
+ion-content {
+    .bg-img {
+        position: fixed;
+    }
+
+    .home-text {
+        position: absolute;
+    }
+
+    .home-text-line-1 {
+        font-family: 'Ubuntu', sans-serif;
+        margin-top: 2vh;
+        margin-left: 5.5vw;
+        font-size: 1.1em;
+        color: #c4c4c4;
+    }
+
+    .home-text-line-2 {
+        font-family: 'Ubuntu', sans-serif;
+        margin-top: 1vh;
+        margin-left: 5.5vw;
+        font-size: 1.7em;
+        color: #FDFAFA;
+    }
+
+    .home-text-line-3 {
+        font-family: 'Ubuntu', sans-serif;
+        margin-left: 5.5vw;
+        font-size: 1.1em;
+        color: #FDFAFA;
+    }
+
+    .profile-img {
+        position: absolute;
+        width: 80px;
+        height: 60px;
+        border-radius: 20px;
+        margin-left: 72vw;
+        margin-top: 4vh;
+    }
+
+    .eventos-em-destaque {
+        position: absolute;
+        margin-top: 18vh;
+        margin-left: 5.5vw;
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 1.7em;
+        font-weight: normal;
+        color: #fdfafa;
+    }
+
+    .eventos-oficiais, .eventos-comunidade {
+        position: absolute;
+        margin-top: 3vh;
+        margin-left: 5.5vw;
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 1.7em;
+        font-weight: normal;
+        color: #fdfafa;
+    }
+
+    .card-eventos-comunidade {
+        margin-top: 9vh;
+    }
+
+
+}

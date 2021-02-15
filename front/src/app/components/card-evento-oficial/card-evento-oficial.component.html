@@ -1,0 +1,38 @@
+<ion-slides>
+  <ion-slide *ngFor='let evento of eventosOficiais'>
+    <ion-card class="card-evento-oficial">
+      <img class="card-img" src="{{evento.img}}">
+
+      <div class="title">
+        <ion-card-title class="card-title">{{evento.name}}</ion-card-title>
+        <ion-card-subtitle class="card-subtitle-1">By: @{{evento.owner}}</ion-card-subtitle>
+        <ion-card-subtitle class="card-subtitle-2">Categoria: {{evento.category}}</ion-card-subtitle>
+      </div>
+  
+      <ion-button class="participar-button" shape='round' color='tertiary'>Participar</ion-button>
+  
+      <ion-card-subtitle class="saiba-mais"><u>Saiba-mais</u></ion-card-subtitle>
+  
+      <br>
+  
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-icon class="button-like" name='heart-outline'></ion-icon>
+            <div class="num-like">30K</div>
+          </ion-col>
+    
+          <ion-col>
+            <ion-icon class="button-comment" name='chatbox-outline'></ion-icon>
+            <div class="num-comment">22K</div>
+          </ion-col>
+    
+          <ion-col>
+            <ion-icon class="button-share" name='repeat-outline'></ion-icon>
+            <div class="num-share">26K</div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card>
+  </ion-slide>
+</ion-slides>

@@ -1,0 +1,55 @@
+ion-content {
+    .img-background {
+        position: fixed;
+        z-index: 0;
+    }
+
+    .cadastro-titulo {
+        position: absolute;
+        color: white;
+        z-index: 5;
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 3em;
+        margin-left: 18.5vw;
+        margin-top: 18vh;
+        letter-spacing: 1.5vw;
+        text-shadow: 3.5px 3.5px #000000;
+        font-weight: bold;
+    }
+
+    form {
+        position: absolute;
+    
+        ion-item {
+            opacity: 1;
+        }
+    }
+
+    // ######################################### register-form #############################################
+    .register-form {
+        margin-top: 39vh;
+        --ion-item-background: transparent;
+        text-shadow: 3.5px 3.5px #000000;
+    }
+
+    // ######################################### input-box #############################################
+    .input-box {
+        margin-top: 1.5vh;
+    }
+
+    // ######################################### input-label #############################################
+    .input-label{
+        font-size: 1.1em;
+        font-family: 'Ubuntu', sans-serif;
+    }
+
+    // ######################################### botao-enviar #############################################
+    .botao-enviar {
+        font-family: 'Ubuntu', sans-serif;
+        letter-spacing: 2vw;
+        font-weight: 600;
+        width: 280px;
+        margin-left: 13vw;
+        margin-top: 7vh;
+    }
+}
