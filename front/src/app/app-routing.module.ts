@@ -50,7 +50,8 @@ const routes: Routes = [
   {
     path: 'eventos',
     loadChildren: () => import('./eventos/eventos.module').then( m => m.EventosPageModule)
-  },  {
+  },
+  {
     path: 'criar-post',
     loadChildren: () => import('./criar-post/criar-post.module').then( m => m.CriarPostPageModule)
   }
