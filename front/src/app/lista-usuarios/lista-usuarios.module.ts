@@ -21,6 +21,6 @@ import { TabMenuComponent } from '../components/tab-menu/tab-menu.component';
     IonicModule,
     ListaUsuariosPageRoutingModule
   ],
-  declarations: [ListaUsuariosPage, FollowersComponent, FollowingComponent, DuoRequestComponent]
+  declarations: [ListaUsuariosPage, FollowersComponent, FollowingComponent, DuoRequestComponent,TabMenuComponent,HeaderComponent]
 })
 export class ListaUsuariosPageModule {}

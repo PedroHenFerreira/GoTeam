@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 class Post {
   user: string;
   profileImg: string;
@@ -16,7 +17,9 @@ export class CardPostComponent implements OnInit {
 
   posts: Post[];
 
-  constructor() { }
+  constructor() {}
+    
+  
 
   ngOnInit() {
     this.posts = [

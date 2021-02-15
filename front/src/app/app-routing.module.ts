@@ -34,8 +34,15 @@ const routes: Routes = [
   {
     path: 'editar-perfil',
     loadChildren: () => import('./editar-perfil/editar-perfil.module').then( m => m.EditarPerfilPageModule)
-  }
-
+  },
+  {
+    path: 'lista-usuarios',
+    loadChildren: () => import('./lista-usuarios/lista-usuarios.module').then( m => m.ListaUsuariosPageModule)
+  },
+  {
+    path: 'comentarios',
+    loadChildren: () => import('./comentarios/comentarios.module').then( m => m.ComentariosPageModule)
+  },
 
 ];
 

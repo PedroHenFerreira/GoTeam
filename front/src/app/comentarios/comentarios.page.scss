@@ -1,0 +1,86 @@
+ion-content{
+    --background:#E5E5E5;
+}
+
+.headerGrid{
+    margin-bottom:1%;
+    border-bottom: 1px solid rgba(148, 148, 148, 0.71);
+}
+
+.pubGrid{
+    border-bottom: 1px solid rgba(148, 148, 148, 0.71);
+    padding-bottom:5%;
+}
+
+.commentCardBg{
+height:80%;
+--background:#E5E5E5;
+}
+
+.commentsTitle{
+margin:0;
+margin-top:3%;
+margin-left:12%;
+font-size:1.6em;
+}
+
+.commentsTitleCol{
+    text-align:center;
+}
+
+.closeIcon{
+    margin-right:10%;
+    margin-top:20%; 
+}
+
+.commentInput{
+padding-left:10px !important;
+}
+
+.orgComments{
+margin-top:5%;
+}
+
+.commentsImgCol{
+    margin-left:2%; 
+}
+
+.commentsImg{
+border-radius:50%;
+}
+
+.userCommentsCard{
+--background:#00CEA9;
+border: 1px solid rgba(112, 0, 255, 0.36);
+border-radius:8px;
+margin:0;
+height:70px;
+width:254px;
+}
+
+.userComment{
+color:#818181;
+margin-left:4%;
+margin-top:2%;
+}
+
+.pubComment{
+text-align:end;
+}
+
+.pubText{
+margin-top:1%;
+margin-bottom:0;
+color:black;
+font-size:1em;
+}
+
+.pubButton{
+margin:0;
+--background:#00CEA9;
+border-radius:10px;
+border:1px solid black;
+height:95%;
+width:72px;
+margin-right:9%;
+}
