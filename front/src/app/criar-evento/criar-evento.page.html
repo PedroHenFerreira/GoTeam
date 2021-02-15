@@ -1,0 +1,80 @@
+<ion-header class="ion-no-border">
+  <app-header></app-header>
+</ion-header>
+
+<ion-content>
+  <img class="bg-img" src="../../assets/GoTeam Imagens/criar-evento-bg.png">
+
+  <ion-card class='card-criar-evento' color='light'>
+    <ion-card-title>Criar um evento</ion-card-title>
+  </ion-card>
+
+  <ion-card class='card-instrucao-evento' color='light'>
+    <br><ion-card-title class="card-instrucao-1">Bem-vindo à área de criação de eventos do GoTeam!</ion-card-title><br>
+    <ion-card-title class="card-instrucao-2">Aqui você pode criar um torneio amador para experienciar um ambiente mais competitivo no jogo.</ion-card-title><br>
+    <ion-card-title class="card-instrucao-3">Todos os torneios amadores são no estilo mata-mata com no máximo 16 equipes.</ion-card-title><br>
+  </ion-card>
+
+  <ion-card class='card-configuracoes' color='light'>
+    <ion-card-title>Configurações:</ion-card-title>
+  </ion-card>
+
+  <ion-card class='card-settings' color='primary'>
+    
+    <br>
+
+    <form>
+      <ion-card-title class="capa-evento">Capa do evento:</ion-card-title>
+
+      <ion-grid>
+        <ion-row>
+          <ion-col class="col-1" size="3">
+            <ion-icon class="img-icon" name='image'></ion-icon>
+          </ion-col>
+
+          <ion-col class="col-2">
+            <ion-card class='choose-champ' color='light'>
+              <ion-select placeholder='Escolha um campeão'>
+                <ion-select-option>Annie</ion-select-option>
+                <ion-select-option>Garen</ion-select-option>
+                <ion-select-option>LeBlanc</ion-select-option>
+                <ion-select-option>Yasuo</ion-select-option>
+                <ion-select-option>Zoe</ion-select-option>
+              </ion-select>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <br>
+
+      <ion-card-title class="event-name">Nome do evento:</ion-card-title>
+      <ion-item>
+        <ion-input class="event-name-input" placeholder='Nome do evento'></ion-input>
+      </ion-item>
+
+      <ion-card-title class="part-number">Número de participantes:</ion-card-title>
+      <ion-card color='light'>
+        <ion-select class="select" placeholder='Número de participantes'>
+          <ion-select-option>2</ion-select-option>
+          <ion-select-option>4</ion-select-option>
+          <ion-select-option>8</ion-select-option>
+          <ion-select-option>16</ion-select-option>
+        </ion-select>
+      </ion-card>
+
+      <ion-card-title class="who-can">Quem pode participar?</ion-card-title>
+      <ion-card color='light'>
+        <ion-select class="select" placeholder='Quem pode participar?'>
+          <ion-select-option>Apenas convidado</ion-select-option>
+          <ion-select-option>Todos</ion-select-option>
+        </ion-select>
+      </ion-card>
+
+      <ion-button class="create-button" type='submit' shape='round' size='large' color='tertiary' (click)='presentAlert()'>Criar evento</ion-button>
+    </form>
+
+    <br>
+  </ion-card>
+
+</ion-content>
