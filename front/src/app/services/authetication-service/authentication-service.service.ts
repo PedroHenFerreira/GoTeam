@@ -18,15 +18,15 @@ export class AuthenticationServiceService {
     }
   }
 
-  userLogin():Observable <any>{
-    return this.http.get(this.apiUrl + 'userLogin' + this.httpHeaders);
+  login():Observable <any>{
+    return this.http.post(this.apiUrl + 'login', this.httpHeaders);
   }
 
-  userRegister():Observable <any>{
-    return this.http.get(this.apiUrl + 'userRegister' + this.httpHeaders);
+  register(form):Observable <any>{
+    return this.http.post(this.apiUrl + 'register', form);
   }
 
   userLogout():Observable <any>{
-    return this.http.get(this.apiUrl + 'userLogout' + this.httpHeaders);
+    return this.http.get(this.apiUrl + 'userLogout', this.httpHeaders);
   }
 }

@@ -23,7 +23,7 @@
   </div>
 
   <!-- Essa tag cria o formulário de cadastro -->
-  <form class="register-form" [formGroup]='registerForm' (ngSubmit)='submitForm(registerForm)'>
+  <form class="register-form" [formGroup]='registerForm' (ngSubmit)='registerUser(registerForm)'>
     <ion-list class="register-list" *ngFor='let label of labels'>
       <ion-label class="input-label" position='stacked'>{{label.label}}:</ion-label>
       <ion-input type='{{label.type}}' placeholder='{{label.label}}' formControlName='{{label.formControlName}}'></ion-input>
@@ -37,9 +37,7 @@
       </div>
 
       <div *ngSwitchCase='2'>
-        <a routerLink="{{buttonUrl}}">
-          <ion-button class="botao-enviar" type='submit' size='large' color='dark' (click)='prosseguirCadastro()' [disabled]='registerForm.invalid'>{{buttonLabel}}</ion-button>
-        </a>
+        <ion-button class="botao-enviar" type='submit' size='large' color='dark' (click)='prosseguirCadastro()' [disabled]='registerForm.invalid'>{{buttonLabel}}</ion-button>
       </div>
     </div>
 

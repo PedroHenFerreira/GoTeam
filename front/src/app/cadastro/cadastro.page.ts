@@ -35,13 +35,12 @@ export class CadastroPage implements OnInit {
 
   constructor(public formbuilder: FormBuilder, public authenticationService: AuthenticationServiceService) { 
     this.registerForm = this.formbuilder.group({
-      userName: [null, [Validators.required]],
+      name: [null, [Validators.required]],
       email: [null, [Validators.email, Validators.required]],
       password: [null, [Validators.required]],
-      confirmPassword: [null, [Validators.required]],
-      userNameRiot: [null, [Validators.required]],
-      emailRiot: [null, [Validators.email, Validators.required]],
-      userNameDiscord: [null, [Validators.required]]
+      lolUsername: [null, [Validators.required]],
+      lolEmail: [null, [Validators.email, Validators.required]],
+      contact: [null, [Validators.required]]
     });
    }
 
@@ -61,7 +60,7 @@ export class CadastroPage implements OnInit {
       {
         label: 'Nome de usuário',
         type: 'text',
-        formControlName: 'userName'
+        formControlName: 'name'
       },
       {
         label: 'E-mail',
@@ -72,19 +71,12 @@ export class CadastroPage implements OnInit {
         label: 'Senha',
         type: 'password',
         formControlName: 'password'
-      },
-      {
-        label: 'Confirmar senha',
-        type: 'password',
-        formControlName: 'confirmPassword'
       }
     ]
 
     this.buttonLabel = 'Prosseguir';
 
     this.buttonUrl = '';
-
-    this.registerUser();
   }
 
   prosseguirCadastro(): void {
@@ -95,17 +87,17 @@ export class CadastroPage implements OnInit {
         {
           label: 'Nome da conta-Riot',
           type: 'text',
-          formControlName: 'userNameRiot'
+          formControlName: 'lolUsername'
         },
         {
           label: 'E-mail da conta-Riot',
           type: 'text',
-          formControlName: 'emailRiot'
+          formControlName: 'lolEmail'
         },
         {
           label: 'Discord',
           type: 'text',
-          formControlName: 'userNameDiscord'
+          formControlName: 'contact'
         }
       ];
       this.buttonLabel = 'Finalizar';
@@ -113,13 +105,9 @@ export class CadastroPage implements OnInit {
     }
   }
 
-  submitForm(form){
-    console.log(form);
-    console.log(form.value);
-  }
-
-  registerUser(){
-    this.authenticationService.userRegister().subscribe((res) => {
+  registerUser(form){
+    let regForm = form.value;
+    this.authenticationService.register(regForm).subscribe((res) => {
       this.register = res;
       console.log(this.register);
     });
