@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationServiceService } from '../services/authetication-service/authentication-service.service';
 
+class User {
+  userName: string;
+  user: string;
+  isLogged: boolean;
+}
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
@@ -9,12 +15,13 @@ import { AuthenticationServiceService } from '../services/authetication-service/
 
 export class HomePage implements OnInit {
 
+  user: User;
+
   logout: [];
 
   constructor(public autheticationService: AuthenticationServiceService) {}
 
   ngOnInit() {
-    // this.logoutUser();
   }
 
   logoutUser(){

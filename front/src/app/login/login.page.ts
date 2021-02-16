@@ -29,7 +29,7 @@ export class LoginPage implements OnInit {
   }
 
   loginUser(){
-    this.authenticationService.userLogin().subscribe((res) => {
+    this.authenticationService.login().subscribe((res) => {
       this.login = res;
       console.log(this.login);
     });
