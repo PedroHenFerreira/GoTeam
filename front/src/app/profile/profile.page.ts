@@ -1,6 +1,7 @@
 import { identifierModuleUrl } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, Form} from '@angular/forms';
+import { PostServiceService } from '../services/post-service/post-service.service'
 
 @Component({
   selector: 'app-profile',
@@ -30,13 +31,69 @@ export class ProfilePage implements OnInit {
     console.log(form.value);
   }
 
-  constructor(public formbuilder: FormBuilder) {
+  post: [];
+  postList: [];
+  followingPosts: [];
+  thisPost: [];
+  postEdit: [];
+  postDelete: [];
+
+  constructor(public formbuilder: FormBuilder, public postService: PostServiceService) {
     this.commentForm = this.formbuilder.group({
       comment:[null, [Validators.required, Validators.maxLength(300)]],
     })
    }
 
   ngOnInit() {
+    this.createPost();
+    this.listPosts();
+    this.listFollowingPosts();
+    this.showThisPost();
+    this.editPost();
+    this.deletePost();
+  }
+
+
+  createPost() {
+    this.postService.createPost().subscribe((res) => {
+      this.post = res;
+      console.log(this.post);
+    }) 
+  }
+
+  listPosts() {
+    this.postService.listPosts().subscribe((res) => {
+      this.postList = res;
+      console.log(this.postList);
+    }) 
+  }
+
+  listFollowingPosts() {
+    this.postService.listFollowingPosts().subscribe((res) => {
+      this.followingPosts = res;
+      console.log(this.followingPosts);
+    }) 
+  }
+
+  showThisPost() {
+    this.postService.showThisPost().subscribe((res) => {
+      this.thisPost = res;
+      console.log(this.thisPost);
+    }) 
+  }
+
+  editPost() {
+    this.postService.editPost().subscribe((res) => {
+      this.postEdit = res;
+      console.log(this.postEdit);
+    }) 
+  }
+
+  deletePost() {
+    this.postService.deletePost().subscribe((res) => {
+      this.postDelete = res;
+      console.log(this.postDelete);
+    }) 
   }
 
 }
