@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, Form} from '@angular/forms';
+import { AuthenticationServiceService } from '../services/authetication-service/authentication-service.service';
 
 @Component({
   selector: 'app-login',
@@ -8,6 +9,8 @@ import { FormGroup, FormBuilder, Validators, Form} from '@angular/forms';
 })
 export class LoginPage implements OnInit {
 
+  login: [];
+
   loginForm: FormGroup;
 
   submitForm(form){
@@ -15,7 +18,7 @@ export class LoginPage implements OnInit {
     console.log(form.value);
   }
 
-  constructor(public formbuilder: FormBuilder) { 
+  constructor(public formbuilder: FormBuilder, public authenticationService: AuthenticationServiceService) { 
     this.loginForm = this.formbuilder.group({
       name: [null, [Validators.required, Validators.maxLength(20)]],
       password: [null, [Validators.required, Validators.maxLength(20)]]
@@ -23,6 +26,13 @@ export class LoginPage implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  loginUser(){
+    this.authenticationService.userLogin().subscribe((res) => {
+      this.login = res;
+      console.log(this.login);
+    });
   }
 
 }

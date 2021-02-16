@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationServiceService } from '../services/authetication-service/authentication-service.service';
 
 @Component({
   selector: 'app-home',
@@ -8,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 
 export class HomePage implements OnInit {
 
-  constructor() {}
+  logout: [];
+
+  constructor(public autheticationService: AuthenticationServiceService) {}
 
   ngOnInit() {
+    this.logoutUser();
+  }
+
+  logoutUser(){
+    this.autheticationService.userLogout().subscribe((res) => {
+      this.logout = res;
+      console.log(this.logout);
+    });
   }
 
 }
