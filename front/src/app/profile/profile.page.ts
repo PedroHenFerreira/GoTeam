@@ -1,3 +1,4 @@
+import { identifierModuleUrl } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, Form} from '@angular/forms';
 
@@ -9,6 +10,20 @@ import { FormGroup, FormBuilder, Validators, Form} from '@angular/forms';
 export class ProfilePage implements OnInit {
 
   commentForm: FormGroup;
+  user: string = "user";
+  player: string = "player";
+  status: string = "user";
+  id: boolean = true;
+
+  userStatus():boolean {
+    if (this.status === this.user){
+      return this.id;
+    }
+    else if(this.status === this.player){
+      this.id = false;
+      return this.id;
+    }
+  }
 
   submitForm(form){
     console.log(form);

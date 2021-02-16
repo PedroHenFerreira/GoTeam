@@ -6,10 +6,6 @@ h3,h5,h4,h6,p{
     width:105%; 
 } 
 
-.commentsIcon{
-    margin-top:20%;
-}
-
 .commentsCard{
     --background:#070B2D;
     border-radius:8px;
@@ -30,4 +26,13 @@ h3,h5,h4,h6,p{
 .commentsDate{
     margin-bottom:0;
     color:#00CEA9;
+}
+
+.arrowIcon{
+    margin-top:10px;
+}
+
+.trashIcon{
+    margin-top:7px;
+    margin-left:3px;
 }
