@@ -37,7 +37,7 @@
       </div>
 
       <div *ngSwitchCase='2'>
-        <a href="{{buttonUrl}}">
+        <a routerLink="{{buttonUrl}}">
           <ion-button class="botao-enviar" type='submit' size='large' color='dark' (click)='prosseguirCadastro()' [disabled]='registerForm.invalid'>{{buttonLabel}}</ion-button>
         </a>
       </div>
