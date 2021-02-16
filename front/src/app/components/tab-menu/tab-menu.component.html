@@ -1,6 +1,6 @@
 <div class="tab">
   <ion-fab  vertical="bottom" horizontal="start" slot="fixed">
-    <a href="/criar-post">
+    <a routerLink="/criar-post">
       <ion-fab-button id="fab">
         <ion-icon id="pencil" name="pencil-outline"></ion-icon>
       </ion-fab-button>
@@ -10,10 +10,10 @@
   
     
       <ion-tab-bar slot="bottom">
-        <ion-tab-button>
+        <ion-tab-button routerLink='/eventos'>
           <ion-icon class ="barIcons" name="calendar-clear-outline"></ion-icon>
         </ion-tab-button>
-        <ion-tab-button >
+        <ion-tab-button routerLink='/home'>
           <ion-icon class ="barIcons" name="game-controller-outline"></ion-icon>
         </ion-tab-button>
         <ion-tab-button >
