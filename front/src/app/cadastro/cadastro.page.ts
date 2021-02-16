@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { AuthenticationServiceService } from '../services/authetication-service/authentication-service.service';
 
 class Cadastro {
   id: number;
@@ -20,6 +21,8 @@ class Labels {
 
 export class CadastroPage implements OnInit {
 
+  register: [];
+
   cadastro: Cadastro[];
 
   labels: Labels[];
@@ -30,7 +33,7 @@ export class CadastroPage implements OnInit {
 
   registerForm: FormGroup;
 
-  constructor(public formbuilder: FormBuilder) { 
+  constructor(public formbuilder: FormBuilder, public authenticationService: AuthenticationServiceService) { 
     this.registerForm = this.formbuilder.group({
       userName: [null, [Validators.required]],
       email: [null, [Validators.email, Validators.required]],
@@ -80,6 +83,8 @@ export class CadastroPage implements OnInit {
     this.buttonLabel = 'Prosseguir';
 
     this.buttonUrl = '';
+
+    this.registerUser();
   }
 
   prosseguirCadastro(): void {
@@ -113,4 +118,10 @@ export class CadastroPage implements OnInit {
     console.log(form.value);
   }
 
+  registerUser(){
+    this.authenticationService.userRegister().subscribe((res) => {
+      this.register = res;
+      console.log(this.register);
+    });
+  }
 }
