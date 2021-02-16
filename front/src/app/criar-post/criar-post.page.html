@@ -6,15 +6,11 @@
     <ion-grid class="grid">
       <ion-row>
         <ion-col>
-          <a href="/home"><ion-icon class="close-icon" name='close-sharp'></ion-icon></a>
+          <a routerLink="/home"><ion-icon class="close-icon" name='close-sharp'></ion-icon></a>
         </ion-col>
   
         <ion-col>
-          <ion-button class="cancel-button" shape='round' color='dark'>Cancelar</ion-button>
-        </ion-col>
-  
-        <ion-col>
-          <ion-button class="post-button" type='submit' shape='round' color='secondary'>Postar</ion-button>
+          <ion-button class="post-button" type='submit' shape='round' routerLink='/home' color='secondary'>Postar</ion-button>
         </ion-col>
       </ion-row>
     </ion-grid>
