@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use Auth;
 
 class postController extends Controller
 {
@@ -14,11 +15,15 @@ class postController extends Controller
     }
 
     public function updatePost(Request $request, $id){
+        $user = Auth::user();
         $post = Post::find($id);
-        $post->updatePost($request);
-        return response()->json(['Sucesso' => $post]);
-    }
-
+        if ($post->user_id == $user->id)
+        {$post->updatePost($request);
+        return response()->json(['Sucesso' => $post]);}
+        else {
+        return response()->json('Erro', 403);
+          }
+        }
     public function readPosts (Request $request){
         $post = Post::all();
         return response()->json(['Sucesso' => $post]);
@@ -27,9 +32,15 @@ class postController extends Controller
         $post = Post::find($id);
         return response()->json(['Sucesso' => $post]);
     }
-    public function deletePost (Request $request, $id){
-        post::destroy($id);
-        return response()->json(['Sucesso']);
+    public function deletePost ($id){
+        $user = Auth::user();
+        $post = Post::find($id);
+        if ($post->user_id == $user->id)
+        {Post::destroy($id);
+        return response()->json(['Sucesso']);}
+        else {
+        return response()->json('Erro', 403);
+        }
     }
 
 
