@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -16,21 +17,27 @@ export class UsuarioServiceService {
     }
   }
 
-  constructor(public http: HttpClient) { }
+  constructor(public http: HttpClient, public router: Router) { }
 
   listUsers():Observable <any> {
     return this.http.get(this.apiUrl + 'listUsers' + this.httpHeaders);
   }
 
-  getUserData():Observable <any> {
-    return this.http.get(this.apiUrl + 'getUserData' + this.httpHeaders);
+  getDetails():Observable <any> {
+    this.httpHeaders.headers['Authorization'] = 'Bearer ' + localStorage.getItem('userToken');
+    return this.http.get(this.apiUrl + 'getDetails', this.httpHeaders);
   }
 
-  getOtherUserData():Observable <any> {
-    return this.http.get(this.apiUrl + 'getOtherUserData' + this.httpHeaders);
+  getUserDetails(id):Observable <any> {
+    this.httpHeaders.headers['Authorization'] = 'Bearer ' + localStorage.getItem('userToken');
+    return this.http.get(this.apiUrl + 'users/' + id , this.httpHeaders);
   }
 
   listFollowingUsers():Observable <any> {
     return this.http.get(this.apiUrl + 'listFollowingUsers' + this.httpHeaders);
+  }
+
+  isLogged(){
+    return localStorage.getItem('userToken') !== null;
   }
 }

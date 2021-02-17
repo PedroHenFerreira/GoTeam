@@ -1,7 +1,8 @@
 import { identifierModuleUrl } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, Form} from '@angular/forms';
-import { PostServiceService } from '../services/post-service/post-service.service'
+import { PostServiceService } from '../services/post-service/post-service.service';
+import { UsuarioServiceService } from '../services/usuario-service/usuario-service.service';
 
 @Component({
   selector: 'app-profile',
@@ -9,6 +10,8 @@ import { PostServiceService } from '../services/post-service/post-service.servic
   styleUrls: ['./profile.page.scss'],
 })
 export class ProfilePage implements OnInit {
+
+  userDetails=[];
 
   commentForm: FormGroup;
   user: string = "user";
@@ -38,19 +41,16 @@ export class ProfilePage implements OnInit {
   postEdit: [];
   postDelete: [];
 
-  constructor(public formbuilder: FormBuilder, public postService: PostServiceService) {
+  constructor(public formbuilder: FormBuilder, public postService: PostServiceService,
+    public usuarioService: UsuarioServiceService) {
     this.commentForm = this.formbuilder.group({
       comment:[null, [Validators.required, Validators.maxLength(300)]],
     })
-   }
+  }
 
   ngOnInit() {
-    this.createPost();
-    this.listPosts();
     this.listFollowingPosts();
-    this.showThisPost();
-    this.editPost();
-    this.deletePost();
+    this.getDetails();
   }
 
 
@@ -94,6 +94,13 @@ export class ProfilePage implements OnInit {
       this.postDelete = res;
       console.log(this.postDelete);
     }) 
+  }
+
+  getDetails(){
+    this.usuarioService.getDetails().subscribe((res) => {
+      this.userDetails = res.user;
+      console.log(this.userDetails);
+    })
   }
 
 }

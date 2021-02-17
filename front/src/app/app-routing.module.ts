@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { VisitanteGuard } from './guards/visitante/visitante.guard';
 
 const routes: Routes = [
   {
@@ -13,7 +14,8 @@ const routes: Routes = [
   },
   {
     path: 'cadastro',
-    loadChildren: () => import('./cadastro/cadastro.module').then( m => m.CadastroPageModule)
+    loadChildren: () => import('./cadastro/cadastro.module').then( m => m.CadastroPageModule),
+    canActivate: [VisitanteGuard]
   },
   {
     path: 'home',
@@ -25,7 +27,8 @@ const routes: Routes = [
   },
   {
     path: 'profile',
-    loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
+    loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule),
+    canActivate: [VisitanteGuard]
   },
   {
     path: 'login',
@@ -33,27 +36,32 @@ const routes: Routes = [
   },
   {
     path: 'editar-perfil',
-    loadChildren: () => import('./editar-perfil/editar-perfil.module').then( m => m.EditarPerfilPageModule)
+    loadChildren: () => import('./editar-perfil/editar-perfil.module').then( m => m.EditarPerfilPageModule),
+    canActivate: [VisitanteGuard]
   },
   {
     path: 'lista-usuarios',
-    loadChildren: () => import('./lista-usuarios/lista-usuarios.module').then( m => m.ListaUsuariosPageModule)
+    loadChildren: () => import('./lista-usuarios/lista-usuarios.module').then( m => m.ListaUsuariosPageModule),
+    canActivate: [VisitanteGuard]
   },
   {
     path: 'comentarios',
-    loadChildren: () => import('./comentarios/comentarios.module').then( m => m.ComentariosPageModule)
+    loadChildren: () => import('./comentarios/comentarios.module').then( m => m.ComentariosPageModule),
   },
   {
-  path: 'criar-evento',
-    loadChildren: () => import('./criar-evento/criar-evento.module').then( m => m.CriarEventoPageModule)
+    path: 'criar-evento',
+    loadChildren: () => import('./criar-evento/criar-evento.module').then( m => m.CriarEventoPageModule),
+    canActivate: [VisitanteGuard]
   },
   {
     path: 'eventos',
-    loadChildren: () => import('./eventos/eventos.module').then( m => m.EventosPageModule)
+    loadChildren: () => import('./eventos/eventos.module').then( m => m.EventosPageModule),
+    canActivate: [VisitanteGuard]
   },
   {
     path: 'criar-post',
-    loadChildren: () => import('./criar-post/criar-post.module').then( m => m.CriarPostPageModule)
+    loadChildren: () => import('./criar-post/criar-post.module').then( m => m.CriarPostPageModule),
+    canActivate: [VisitanteGuard]
   }
 
 ];
