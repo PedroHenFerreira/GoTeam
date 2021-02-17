@@ -1,12 +1,10 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>editar perfil</ion-title>
-  </ion-toolbar>
-</ion-header>
+
 
 <ion-content>
 
   <img id="shacoBg" src="../assets/icon/shacoringa.png">
+
+  <ion-icon routerLink="/profile" size="large" class="arrowIcon" name="arrow-back-outline"></ion-icon>
 
   <ion-card class="titleCard">
     <h2 class="titleText">Editar Perfil</h2>
@@ -189,7 +187,7 @@
 
     </ion-card>
 
-    <ion-button type="submit" class="saveButton">
+    <ion-button routerLink="/profile" type="submit" class="saveButton">
       Salvar alterações
     </ion-button>
   </form>

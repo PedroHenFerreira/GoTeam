@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { EventServiceService } from '../services/event-service/event-service.service';
 import { AlertController } from '@ionic/angular';
 import { ToastController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-criar-evento',
@@ -12,8 +13,7 @@ export class CriarEventoPage implements OnInit {
 
   createEvent: [];
 
-  constructor(public eventService: EventServiceService, public alertController: AlertController,
-  public toastController: ToastController) { }
+  constructor(public eventService: EventServiceService, public alertController: AlertController, public router:Router, public toastController: ToastController, ) { }
 
   async eventoCriadoToast() {
     const toast = await this.toastController.create({
@@ -32,6 +32,7 @@ export class CriarEventoPage implements OnInit {
         text: 'Confirmar',
         handler: () => {
           console.log(this.eventoCriadoToast());
+          this.router.navigate(['/eventos']);
         }
       }] 
     });

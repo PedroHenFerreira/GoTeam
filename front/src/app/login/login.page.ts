@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, Form} from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthenticationServiceService } from '../services/authetication-service/authentication-service.service';
 import { Router } from '@angular/router';
 
@@ -19,8 +20,7 @@ export class LoginPage implements OnInit {
     console.log(form.value);
   }
 
-  constructor(public formbuilder: FormBuilder, public authenticationService: AuthenticationServiceService,
-    public router: Router) { 
+  constructor(public formbuilder: FormBuilder, public authenticationService: AuthenticationServiceService, public router: Router) { 
     this.loginForm = this.formbuilder.group({
       email: [null, [Validators.required, Validators.maxLength(20)]],
       password: [null, [Validators.required, Validators.maxLength(20)]]

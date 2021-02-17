@@ -28,13 +28,13 @@ Route::put('users/{id}', [userController::class, 'updateUser']);
 Route::get('users', [userController::class, 'readUsers']);
 Route::get('users/{id}', [userController::class, 'readUser']);
 Route::delete('users/{id}', [userController::class, 'deleteUser']);
+Route::get('user/{name}', [userController::class, 'searchUser']);
 
 
 Route::post('post', [postController::class, 'createPost']);
-Route::put('post/{id}', [postController::class, 'updatePost']);
 Route::get('post', [postController::class, 'readPosts']);
 Route::get('post/{id}', [postController::class, 'readPost']);
-Route::delete('post/{id}', [postController::class, 'deletePost']);
+
 
 
 Route::post('event', [eventController::class, 'createEvent']);
@@ -59,6 +59,8 @@ Route::group(['middleware' => 'auth:api'], function(){
     Route::get('logout', [passportController::class, 'logout']);
     Route::get('getDetails', [passportController::class, 'getDetails']);
     Route::post('createPost', [userController::class, 'createPost']);
+    Route::put('post/{id}', [postController::class, 'updatePost']);
+    Route::delete('deletePost/{id}', [postController::class, 'deletePost']);
     Route::post('comment/{post_id}', [commentController::class, 'createComment']);
     Route::put('comment/{id}', [commentController::class, 'updateComment']);
     Route::delete('comment/{id}', [commentController::class, 'deleteComment']);

@@ -19,15 +19,15 @@ export class ProfilePage implements OnInit {
   status: string = "user";
   id: boolean = true;
 
-  userStatus():boolean {
-    if (this.status === this.user){
-      return this.id;
-    }
-    else if(this.status === this.player){
-      this.id = false;
-      return this.id;
-    }
-  }
+  // userStatus():boolean {
+  //   if (this.status === this.user){
+  //     return this.id;
+  //   }
+  //   else if(this.status === this.player){
+  //     this.id = false;
+  //     return this.id;
+  //   }
+  // }
 
   submitForm(form){
     console.log(form);

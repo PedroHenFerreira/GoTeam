@@ -33,12 +33,11 @@ class userController extends Controller
         return response()->json(['Sucesso']);
     }
 
-    public function createPost (Request $request) {
-        $post = new Post;
-        $post->createPost($request);
-        return response()->json($post, 200);
+
+    public function searchUser ($name){
+      $user = User::where('name','=',$name)->get();
+      return response()->json([$user]);
+    }
 
 
-      }
-
-      }
+}
