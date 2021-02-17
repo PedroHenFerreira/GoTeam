@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EventServiceService } from '../services/event-service/event-service.service';
+import { UsuarioServiceService } from '../services/usuario-service/usuario-service.service';
 
 @Component({
   selector: 'app-eventos',
@@ -8,20 +9,20 @@ import { EventServiceService } from '../services/event-service/event-service.ser
 })
 export class EventosPage implements OnInit {
 
+  user = [];
+
   listEvent: [];
   getEvent: [];
   editEvent: [];
   deleteEvent: [];
   likeEvent: [];
 
-  constructor(public eventService: EventServiceService) { }
+  constructor(public eventService: EventServiceService, public usuarioService: UsuarioServiceService) { }
 
   ngOnInit() {
     this.getListEvent();
-    this.getShowEvent();
-    this.putEditEvent();
-    this.delEvent();
     this.putLikeEvent();
+    this.getDetails();
   }
 
   getListEvent(){
@@ -57,5 +58,12 @@ export class EventosPage implements OnInit {
       this.likeEvent = res;
       console.log(this.likeEvent);
     });
+  }
+
+  getDetails(){
+    this.usuarioService.getDetails().subscribe((res) => {
+      this.user = res.user;
+      console.log(this.user);
+    })
   }
 }

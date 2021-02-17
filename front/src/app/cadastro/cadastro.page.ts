@@ -43,7 +43,7 @@ export class CadastroPage implements OnInit {
       lolEmail: [null, [Validators.email, Validators.required]],
       contact: [null, [Validators.required]]
     });
-   }
+  }
 
   ngOnInit() {
     this.cadastro = [
@@ -111,7 +111,7 @@ export class CadastroPage implements OnInit {
     this.authenticationService.register(regForm).subscribe((res) => {
       this.register = res;
       console.log(this.register);
-      this.router.navigate(['/home']);
+      this.router.navigate(['/login']);
     });
   }
 }

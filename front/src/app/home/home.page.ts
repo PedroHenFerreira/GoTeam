@@ -1,11 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationServiceService } from '../services/authetication-service/authentication-service.service';
-
-class User {
-  userName: string;
-  user: string;
-  isLogged: boolean;
-}
+import { UsuarioServiceService } from  '../services/usuario-service/usuario-service.service';
 
 @Component({
   selector: 'app-home',
@@ -15,13 +10,22 @@ class User {
 
 export class HomePage implements OnInit {
 
-  user: User;
+  user=[];
 
   logout: [];
 
-  constructor(public autheticationService: AuthenticationServiceService) {}
+  constructor(public autheticationService: AuthenticationServiceService,
+  public usuarioService: UsuarioServiceService) {}
 
   ngOnInit() {
+    this.getDetails();
+  }
+
+  getDetails(){
+    this.usuarioService.getDetails().subscribe((res) => {
+      this.user = res.user;
+      console.log(this.user);
+    })
   }
 
   logoutUser(){

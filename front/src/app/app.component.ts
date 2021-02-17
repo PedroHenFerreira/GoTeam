@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { UsuarioServiceService } from './services/usuario-service/usuario-service.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -14,5 +16,17 @@ export class AppComponent {
   { title: 'Configurações', url: '/configuracoes', icon: 'settings' },
   { title: 'Sair', url: '/login', icon: 'log-out' },];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
-  constructor() {}
+
+  user = [];
+
+  constructor(public usuarioService: UsuarioServiceService) {
+    this.getDetails();
+  }
+
+  getDetails(){
+    this.usuarioService.getDetails().subscribe((res) => {
+      this.user = res.user;
+      console.log(this.user);
+    })
+  }
 }
