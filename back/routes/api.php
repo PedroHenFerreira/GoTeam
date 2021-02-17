@@ -28,6 +28,7 @@ Route::put('users/{id}', [userController::class, 'updateUser']);
 Route::get('users', [userController::class, 'readUsers']);
 Route::get('users/{id}', [userController::class, 'readUser']);
 Route::delete('users/{id}', [userController::class, 'deleteUser']);
+Route::get('user/{name}', [userController::class, 'searchUser']);
 
 
 Route::post('post', [postController::class, 'createPost']);
@@ -59,6 +60,3 @@ Route::group(['middleware' => 'auth:api'], function(){
     Route::get('logout', [passportController::class, 'logout']);
     Route::get('getDetails', [passportController::class, 'getDetails']);
 });
-
-
-

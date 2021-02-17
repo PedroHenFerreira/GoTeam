@@ -22,7 +22,7 @@ class userController extends Controller
         $user = User::all();
         return response()->json(['Sucesso' => $user]);
     }
-    public function readUser (Request $reques, $id){
+    public function readUser (Request $request, $id){
         $user = User::find($id);
         return response()->json(['Sucesso' => $user]);
     }
@@ -30,5 +30,12 @@ class userController extends Controller
         User::destroy($id);
         return response()->json(['Sucesso']);
     }
+
+
+    public function searchUser ($name){
+      $user = User::where('name','=',$name)->get();
+      return response()->json([$user]);
+    }
+
 
 }
