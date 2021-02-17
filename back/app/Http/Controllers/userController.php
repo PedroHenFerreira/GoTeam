@@ -40,6 +40,5 @@ class userController extends Controller
 
 
       }
-      //public function searchUser ($user_id){
-        //$user = user::find($id);
+
       }
