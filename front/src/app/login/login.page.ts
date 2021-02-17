@@ -9,7 +9,7 @@ import { AuthenticationServiceService } from '../services/authetication-service/
 })
 export class LoginPage implements OnInit {
 
-  login: [];
+  loginArray: [];
 
   loginForm: FormGroup;
 
@@ -20,7 +20,7 @@ export class LoginPage implements OnInit {
 
   constructor(public formbuilder: FormBuilder, public authenticationService: AuthenticationServiceService) { 
     this.loginForm = this.formbuilder.group({
-      name: [null, [Validators.required, Validators.maxLength(20)]],
+      email: [null, [Validators.required, Validators.maxLength(20)]],
       password: [null, [Validators.required, Validators.maxLength(20)]]
     });
   }
@@ -28,10 +28,11 @@ export class LoginPage implements OnInit {
   ngOnInit() {
   }
 
-  loginUser(){
-    this.authenticationService.login().subscribe((res) => {
-      this.login = res;
-      console.log(this.login);
+  login(form){
+    console.log(form.value);
+    this.authenticationService.login(form.value).subscribe((res) => {
+      console.log(res);
+      localStorage.setItem('userToken', res.token);
     });
   }
 
