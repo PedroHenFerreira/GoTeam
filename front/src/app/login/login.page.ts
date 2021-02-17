@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, Form} from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthenticationServiceService } from '../services/authetication-service/authentication-service.service';
 
 @Component({
@@ -18,7 +19,7 @@ export class LoginPage implements OnInit {
     console.log(form.value);
   }
 
-  constructor(public formbuilder: FormBuilder, public authenticationService: AuthenticationServiceService) { 
+  constructor(public formbuilder: FormBuilder, public authenticationService: AuthenticationServiceService, public router: Router) { 
     this.loginForm = this.formbuilder.group({
       email: [null, [Validators.required, Validators.maxLength(20)]],
       password: [null, [Validators.required, Validators.maxLength(20)]]
@@ -33,6 +34,7 @@ export class LoginPage implements OnInit {
     this.authenticationService.login(form.value).subscribe((res) => {
       console.log(res);
       localStorage.setItem('userToken', res.token);
+       this.router.navigate(['/home']);
     });
   }
   // 
