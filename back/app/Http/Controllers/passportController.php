@@ -15,8 +15,8 @@ class passportController extends Controller
         $user = new User;
         $user->createUser($request);
         $user->save();
-        return response()->json([
-            "message"=>"Usuário registrado.", "user"=>$user],200);
+        $success['token'] = $user->createToken('MyApp')->accessToken;
+        return response()->json(['success' => $success, 'user' => $user], 200);
     }
     public function login (Request $request)
     {

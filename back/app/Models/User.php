@@ -52,11 +52,12 @@ class User extends Authenticatable
         $this->lolUsername = $request->lolUsername;
         $this->lolEmail = $request->lolEmail;
         $this->password = bcrypt($request->password);
+        $this->admin = $request->admin;
         $this->save();
     }
     public function updateUser(Request $request){
         if ($request->name){
-            $this->name = $request->name;  
+            $this->name = $request->name;
         }
         if ($request->email){
             $this->email = $request->email;
@@ -95,7 +96,7 @@ class User extends Authenticatable
     public function comment(){
         return $this->hasMany('App\Models\Comment');
         }
-    
-    
+
+
 
 }

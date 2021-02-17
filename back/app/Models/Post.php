@@ -5,10 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+use Auth;
 
 class Post extends Model
 {
     public function createPost(Request $request){
+        $user = Auth::user();
+        $this->user_id=$user->id;
         $this->bodyText = $request->bodyText;
         $this->media = $request->media;
         $this->like = $request->like;
@@ -19,7 +22,7 @@ class Post extends Model
 
     public function updatePost(Request $request){
         if ($request->bodyText){
-            $this->bodyText = $request->bodyText;  
+            $this->bodyText = $request->bodyText;
         }
         if ($request->media){
             $this->media = $request->media;
@@ -39,5 +42,6 @@ class Post extends Model
     public function user(){
         return $this->belongsTo('App\Models\User');
        }
-  
+
+
 }
