@@ -31,4 +31,6 @@ class postController extends Controller
         post::destroy($id);
         return response()->json(['Sucesso']);
     }
+
+
 }
