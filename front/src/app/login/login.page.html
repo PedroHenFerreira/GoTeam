@@ -24,9 +24,9 @@
       </ion-row>
     </ion-grid>
 
-    <form [formGroup]="loginForm" (ngSubmit) = "submitForm(loginForm)">
+    <form [formGroup]="loginForm" (ngSubmit) = "login(loginForm)">
       <ion-card class="inputCard">
-          <ion-input class="inputTextLogin" placeholder="Nome ou Email" type="text" formControlName="name"></ion-input>
+          <ion-input class="inputTextLogin" placeholder="Email" type="text" formControlName="email"></ion-input>
       </ion-card>
       
 

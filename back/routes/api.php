@@ -45,11 +45,11 @@ Route::get('event/{id}', [eventController::class, 'readEvent']);
 Route::delete('event/{id}', [eventController::class, 'deleteEvent']);
 
 
-Route::post('comment', [commentController::class, 'createComment']);
-Route::put('comment/{id}', [commentController::class, 'updateComment']);
+
+
 Route::get('comment', [commentController::class, 'readComment']);
 Route::get('comment/{id}', [commentController::class, 'readComment']);
-Route::delete('comment/{id}', [commentController::class, 'deleteComment']);
+
 
 
 Route::post('register', [passportController::class, 'register']);
@@ -59,4 +59,8 @@ Route::post('login', [passportController::class, 'login']);
 Route::group(['middleware' => 'auth:api'], function(){
     Route::get('logout', [passportController::class, 'logout']);
     Route::get('getDetails', [passportController::class, 'getDetails']);
+    Route::post('createPost', [userController::class, 'createPost']);
+    Route::post('comment/{post_id}', [commentController::class, 'createComment']);
+    Route::put('comment/{id}', [commentController::class, 'updateComment']);
+    Route::delete('comment/{id}', [commentController::class, 'deleteComment']);
 });
