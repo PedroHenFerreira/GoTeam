@@ -35,5 +35,5 @@ export class LoginPage implements OnInit {
       localStorage.setItem('userToken', res.token);
     });
   }
-
+  // 
 }
