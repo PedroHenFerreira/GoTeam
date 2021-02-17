@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthenticationServiceService } from '../services/authetication-service/authentication-service.service';
+import { Router } from '@angular/router';
 
 class Cadastro {
   id: number;
@@ -33,7 +34,7 @@ export class CadastroPage implements OnInit {
 
   registerForm: FormGroup;
 
-  constructor(public formbuilder: FormBuilder, public authenticationService: AuthenticationServiceService) { 
+  constructor(public formbuilder: FormBuilder, public authenticationService: AuthenticationServiceService,public router: Router) { 
     this.registerForm = this.formbuilder.group({
       name: [null, [Validators.required]],
       email: [null, [Validators.email, Validators.required]],
@@ -110,6 +111,7 @@ export class CadastroPage implements OnInit {
     this.authenticationService.register(regForm).subscribe((res) => {
       this.register = res;
       console.log(this.register);
+      this.router.navigate(['/home']);
     });
   }
 }
