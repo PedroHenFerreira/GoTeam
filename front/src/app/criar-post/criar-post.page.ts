@@ -42,4 +42,11 @@ export class CriarPostPage implements OnInit {
       this.router.navigate(['/home']);
     });
   }
+
+  postEdit(id, form){
+    let regForm = form.value;
+    this.postService.editPost(id, regForm).subscribe((res) => {
+      console.log(res);
+    })
+  }
 }

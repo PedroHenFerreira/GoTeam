@@ -35,12 +35,14 @@ export class PostServiceService {
     return this.http.get(this.apiUrl + 'showThisPost' + this.httpHeaders);
   }
 
-  editPost():Observable <any> {
-    return this.http.get(this.apiUrl + 'editPost' + this.httpHeaders);
+  editPost(id, form):Observable <any> {
+    this.httpHeaders.headers['Authorization'] = 'Bearer ' + localStorage.getItem('userToken');
+    return this.http.put(this.apiUrl + 'post/' + id, form, this.httpHeaders);
   }
 
-  deletePost():Observable <any> {
-    return this.http.get(this.apiUrl + 'deletePost' + this.httpHeaders);
+  deletePost(id):Observable <any> {
+    this.httpHeaders.headers['Authorization'] = 'Bearer ' + localStorage.getItem('userToken');
+    return this.http.delete(this.apiUrl + 'deletePost/' + id, this.httpHeaders);
   }
   
 }
