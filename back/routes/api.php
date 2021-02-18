@@ -32,7 +32,7 @@ Route::get('user/{name}', [userController::class, 'searchUser']);
 
 //post
 Route::post('post', [postController::class, 'createPost']);
-
+Route::get('post', [postController::class, 'readPosts']);
 Route::get('post/{id}', [postController::class, 'readPost']);
 
 

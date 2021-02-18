@@ -26,6 +26,12 @@ class postController extends Controller
         return response()->json('Erro', 403);
           }
         }
+        public function readPosts (Request $request){
+        $post = Post::all();
+        return response()->json(['Sucesso' => $post]);
+          }
+
+
     public function readFollowingPosts (){
         $count = 0;
         $user = Auth::user();
