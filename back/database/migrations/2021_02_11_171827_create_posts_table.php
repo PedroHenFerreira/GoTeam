@@ -15,12 +15,12 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->string('bodyText');
+            $table->longText('bodyText');
             $table->foreignId('user_id');
             $table->string('media')->nullable();
-            $table->float('like')->nullable();
+            $table->integer('like')->nullable();
             $table->string('comment')->nullable();
-            $table->string('retweet')->nullable();
+            $table->integer('retweet')->nullable();
             $table->timestamps();
         });
 
