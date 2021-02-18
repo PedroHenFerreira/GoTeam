@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthenticationServiceService } from './services/authetication-service/authentication-service.service';
 import { Router } from '@angular/router';
+import { UsuarioServiceService } from './services/usuario-service/usuario-service.service';
 
 @Component({
   selector: 'app-root',
@@ -16,16 +17,25 @@ export class AppComponent {
   { title: 'Pesquisar', url: '/pesquisar', icon: 'search' },
   { title: 'Configurações', url: '/configuracoes', icon: 'settings' },
   //{ title: 'Sair', url: '/login', icon: 'log-out' },
-];
+  ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
-  
-  constructor(public authenticationService: AuthenticationServiceService,public router: Router) {}
+  user = [];
+
+  constructor(public authenticationService: AuthenticationServiceService,public router: Router,
+  public usuarioService: UsuarioServiceService) {this.getDetails();}
   
   logout(){
     this.authenticationService.logout().subscribe((res) => {
       console.log(res);
       localStorage.removeItem('userToken');
       this.router.navigate(['/login']);
+
+  
+
+  getDetails(){
+    this.usuarioService.getDetails().subscribe((res) => {
+      this.user = res.user;
+      console.log(this.user);
     })
   }
 }

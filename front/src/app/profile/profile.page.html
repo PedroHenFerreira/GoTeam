@@ -14,8 +14,8 @@
           <img id="userImg" src="../assets/icon/ShacoLoadScreen_7.jpg">
         </ion-col>
         <ion-col  id="userNamesCol">
-          <h3 id="userName">Behïnd you</h3>
-          <h6 id="userSubName">@BehindYou</h6>
+          <h3 id="userName">{{userDetails.name}}</h3>
+          <h6 id="userSubName">@{{userDetails.name}}</h6>
         </ion-col>
         <ion-col size="2" id="settingsCol">
           <div>
@@ -66,7 +66,7 @@
       <h4 class="disc">Discord:</h4>
     </div>
     <div class="discUserOrg">
-      <h4 class="discUser">beventura</h4>
+      <h4 class="discUser">{{userDetails.contact}}</h4>
       <h4 class="discNumbers">#5866</h4>
     </div>
   </ion-card>
