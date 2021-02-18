@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, Form} from '@angular/forms';
 import { PostServiceService } from '../services/post-service/post-service.service';
 import { UsuarioServiceService } from '../services/usuario-service/usuario-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -10,6 +11,8 @@ import { UsuarioServiceService } from '../services/usuario-service/usuario-servi
   styleUrls: ['./profile.page.scss'],
 })
 export class ProfilePage implements OnInit {
+
+  newPost = [];
 
   userDetails=[];
 
@@ -42,7 +45,7 @@ export class ProfilePage implements OnInit {
   postDelete: [];
 
   constructor(public formbuilder: FormBuilder, public postService: PostServiceService,
-    public usuarioService: UsuarioServiceService) {
+    public usuarioService: UsuarioServiceService, public router: Router) {
     this.commentForm = this.formbuilder.group({
       comment:[null, [Validators.required, Validators.maxLength(300)]],
     })
@@ -54,11 +57,13 @@ export class ProfilePage implements OnInit {
   }
 
 
-  createPost() {
-    this.postService.createPost().subscribe((res) => {
-      this.post = res;
-      console.log(this.post);
-    }) 
+  createPost(form){
+    let regFomr = form.value;
+    this.postService.createPost(regFomr).subscribe((res) => {
+      this.newPost = res;
+      console.log(this.newPost);
+      this.router.navigate(['/home']);
+    });
   }
 
   listPosts() {
@@ -82,15 +87,16 @@ export class ProfilePage implements OnInit {
     }) 
   }
 
-  editPost() {
-    this.postService.editPost().subscribe((res) => {
+  editPost(id, form) {
+    let regForm = form.value;
+    this.postService.editPost(id, regForm).subscribe((res) => {
       this.postEdit = res;
       console.log(this.postEdit);
     }) 
   }
 
-  deletePost() {
-    this.postService.deletePost().subscribe((res) => {
+  deletePost(id) {
+    this.postService.deletePost(id).subscribe((res) => {
       this.postDelete = res;
       console.log(this.postDelete);
     }) 

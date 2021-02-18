@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { PostServiceService } from '../../services/post-service/post-service.service';
 
 class Post {
   id: number;
@@ -17,9 +17,11 @@ class Post {
 })
 export class CardPostComponent implements OnInit {
 
+  newPost = [];
+
   posts: Post[];
 
-  constructor() {}
+  constructor(public postService: PostServiceService) {}
 
   ngOnInit() {
     this.posts = [
