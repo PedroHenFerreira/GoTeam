@@ -39,5 +39,16 @@ class userController extends Controller
       return response()->json([$user]);
     }
 
+  public function followUser ($id){
+    $user = Auth::user();
+    $user->userFollowing()->attach($id);
+    return response()->json(['Sucesso', 200]);
+  }
+  public function unfollowUser ($id){
+    $user = Auth::user();
+    $user->userFollowing()->detach($id);
+    return response()->json(['Sucesso', 200]);
+  }
+
 
 }
