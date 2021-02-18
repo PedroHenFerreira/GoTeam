@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { PostServiceService } from '../../services/post-service/post-service.service';
+import { UsuarioServiceService } from '../../services/usuario-service/usuario-service.service';
 
 class Post {
   id: number;
@@ -17,55 +18,28 @@ class Post {
 })
 export class CardPostComponent implements OnInit {
 
-  newPost = [];
+  @Input() post;
+  @Output() deleted = new EventEmitter<string>();
 
+  users = [];
+
+  user = [];
+  
   posts: Post[];
 
-  constructor(public postService: PostServiceService) {}
+  estaLogado: boolean;
+
+  constructor(public postService: PostServiceService, public usuarioService: UsuarioServiceService) {}
 
   ngOnInit() {
-    this.posts = [
-      {
-        id: 0,
-        user: 'Lukaldin10efaixa',
-        profileImg: "../../assets/GoTeam Imagens/rammus.jpg",
-        postTime: '23',
-        text: 'PENTALKILL DE RAMMUS HOJE! #Rolando&Matando',
-        isLike: false
-      },
-      {
-        id: 1,
-        user: 'LeagueOfDraven',
-        profileImg: "../../assets/GoTeam Imagens/draven.png",
-        postTime: '50',
-        text: 'Mais umma vitória, mais um time carregado por mim...',
-        isLike: false
-      },
-      {
-        id: 2,
-        user: 'L ainda vive',
-        profileImg: "../../assets/GoTeam Imagens/Lawliet.jpg",
-        postTime: '53',
-        text: 'Light, pode me dar sua opinião? Por que meu time sempre perde?',
-        isLike: false
-      },
-      {
-        id: 3,
-        user: 'GladiadorNoxiano',
-        profileImg: "../../assets/GoTeam Imagens/darius.jpg",
-        postTime: '59',
-        text: 'Caí pra Bronze 3 :(',
-        isLike: false
-      }
-    ]
+    this.estaLogado = this.usuarioService.isLogged();
   }
 
-  likeDislike(id: number){
-    if(this.posts[id].isLike){
-      this.posts[id].isLike = false;
-    } else if(!this.posts[id].isLike){
-      this.posts[id].isLike = true;
-    }
+  deletePost(id){
+    this.postService.deletePost(id).subscribe((res) => {
+      console.log(res);
+      this.deleted.emit("Post deletado");
+    })
   }
 
 }

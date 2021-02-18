@@ -1,59 +1,55 @@
-<ion-card class="post-feed" *ngFor='let post of posts'>
-  <img class="post-profile-img" src="{{post.profileImg}}">
-  
-  <ion-card-title class="post-user-name">{{post.user}}</ion-card-title>
-  <ion-card-subtitle class="post-time">Postado há {{post.postTime}} min</ion-card-subtitle>
-
-  
-  <!-- <ion-icon class="delete-post-button" name='trash-outline'></ion-icon> -->
-
-  <ion-grid>
-    <ion-row>
-      <ion-col>
-        <ion-card class="post-text-field">
-          <ion-card-subtitle class="post-text">{{post.text}}</ion-card-subtitle>
-        </ion-card>
-      </ion-col>
-
-      <ion-col>
-        <ion-icon class="edit-post-button" name='create-outline'></ion-icon>
-        <ion-icon class="delete-post-button" name='trash-outline'></ion-icon>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-
-  <ion-grid>
-    <ion-row class="row">
-      <ion-col>
-        <div class="like">
-          <div [ngSwitch]='post.isLike'>
-            <div *ngSwitchCase='false'>
-              <ion-icon class="button-like" name='heart-outline' (click)="likeDislike(post.id)"></ion-icon>
+<div *ngIf='estaLogado'>
+  <div class="posts">
+    <ion-card class="post-feed">
+      <img class="post-profile-img" src="../../assets/GoTeam Imagens/darius.jpg">
+      
+      <ion-card-title class="post-user-name">Sem nome</ion-card-title>
+      <ion-card-subtitle class="post-time">Postado há 20 min</ion-card-subtitle>
+    
+      
+      <!-- <ion-icon class="delete-post-button" name='trash-outline'></ion-icon> -->
+    
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-card class="post-text-field">
+              <ion-card-subtitle class="post-text">{{post.bodyText}}</ion-card-subtitle>
+            </ion-card>
+          </ion-col>
+    
+          <ion-col>
+            <ion-icon class="edit-post-button" name='create-outline'></ion-icon>
+            <ion-icon class="delete-post-button" name='trash-outline' (click)='deletePost(post.id)'></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    
+      <ion-grid>
+        <ion-row class="row">
+          <ion-col>
+            <div class="like">
+              <ion-icon class="button-like" name='heart-outline' ></ion-icon>
+              <div class="num-like">912</div>
             </div>
-  
-            <div *ngSwitchCase='true'>
-              <ion-icon class="button-like" name='heart' (click)="likeDislike(post.id)"></ion-icon>
+          </ion-col>
+    
+          <ion-col>
+            <div class="comment">
+              <a routerLink='/comentarios'>
+                <ion-icon class="button-comment" name='chatbox-outline'></ion-icon>
+                <div class="num-comment">700</div>
+              </a>
             </div>
-          </div>
-          <div class="num-like">912</div>
-        </div>
-      </ion-col>
-
-      <ion-col>
-        <div class="comment">
-          <a routerLink='/comentarios'>
-            <ion-icon class="button-comment" name='chatbox-outline'></ion-icon>
-            <div class="num-comment">700</div>
-          </a>
-        </div>
-      </ion-col>
-
-      <ion-col>
-        <div class="share">
-          <ion-icon class="button-share" name='repeat-outline'></ion-icon>
-          <div class="num-share">840</div>
-        </div>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-</ion-card>
+          </ion-col>
+    
+          <ion-col>
+            <div class="share">
+              <ion-icon class="button-share" name='repeat-outline'></ion-icon>
+              <div class="num-share">840</div>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card>
+  </div>
+</div>

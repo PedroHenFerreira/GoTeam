@@ -13,6 +13,7 @@ export class CriarPostPage implements OnInit {
 
   newPost = [];
   user = [];
+  postsList = [];
 
   registerForm: FormGroup;
 
@@ -34,11 +35,20 @@ export class CriarPostPage implements OnInit {
     })
   }
 
+  listPosts(){
+    this.postService.listPosts().subscribe((res) => {
+      this.postsList = res.Sucesso;
+      console.log(this.postsList);
+      console.log(res);
+    })
+  }
+
   createPost(form){
     let regFomr = form.value;
     this.postService.createPost(regFomr).subscribe((res) => {
       this.newPost = res;
       console.log(this.newPost);
+      this.listPosts();
       this.router.navigate(['/home']);
     });
   }

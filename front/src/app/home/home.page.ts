@@ -12,20 +12,42 @@ import { PostServiceService } from '../services/post-service/post-service.servic
 export class HomePage implements OnInit {
 
   user=[];
+  users=[];
+  postsList=[];
 
   logout: [];
 
   constructor(public autheticationService: AuthenticationServiceService,
-  public usuarioService: UsuarioServiceService, public postService: PostServiceService) {}
+  public usuarioService: UsuarioServiceService, public postService: PostServiceService) {this.listPosts();}
 
   ngOnInit() {
     this.getDetails();
+    this.listPosts();
+    // this.postDeleted($event);
+  }
+
+  ionViewWillEnter(){
+    this.listPosts();
   }
 
   getDetails(){
     this.usuarioService.getDetails().subscribe((res) => {
       this.user = res.user;
       console.log(this.user);
+    })
+  }
+
+  listPosts(){
+    this.postService.listPosts().subscribe((res) => {
+      this.postsList = res.Sucesso;
+      console.log(this.postsList);
+    })
+  }
+
+  listUsers(){
+    this.usuarioService.listUsers().subscribe((res) => {
+      this.users = res.Sucesso;
+      console.log(this.users);
     })
   }
 
@@ -43,10 +65,15 @@ export class HomePage implements OnInit {
   }
 
   logoutUser(){
-    this.autheticationService.userLogout().subscribe((res) => {
+    this.autheticationService.logout().subscribe((res) => {
       this.logout = res;
       console.log(this.logout);
     });
+  }
+
+  postDeleted(event){
+    this.listPosts();
+    console.log(event);
   }
 
 }
