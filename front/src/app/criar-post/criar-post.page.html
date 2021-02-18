@@ -2,11 +2,11 @@
 </ion-header>
 
 <ion-content color='dark'>
-  <form [formGroup]='registerForm' (ngSubmit)='submitForm(registerForm)'>
+  <form [formGroup]='registerForm' (ngSubmit)='createPost(registerForm)'>
     <ion-grid class="grid">
       <ion-row>
         <ion-col>
-          <a routerLink="/home"><ion-icon class="close-icon" name='close-sharp'></ion-icon></a>
+          <ion-icon class="close-icon" name='close-sharp'></ion-icon>
         </ion-col>
   
         <ion-col>
@@ -16,7 +16,7 @@
     </ion-grid>
   
     <div class="text-input">
-      <ion-textarea rows='40' clearOnEdit='true' placeholder='Como foram seus jogos hoje?' formControlName='text'></ion-textarea>
+      <ion-textarea rows='40' clearOnEdit='true' placeholder='Como foram seus jogos hoje?' formControlName='bodyText'></ion-textarea>
     </div>
   </form>
   

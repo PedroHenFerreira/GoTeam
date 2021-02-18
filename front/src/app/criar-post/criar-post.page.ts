@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { PostServiceService } from '../services/post-service/post-service.service';
+import { Router } from '@angular/router';
+import { UsuarioServiceService } from  '../services/usuario-service/usuario-service.service';
 
 @Component({
   selector: 'app-criar-post',
@@ -8,19 +11,35 @@ import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 })
 export class CriarPostPage implements OnInit {
 
+  newPost = [];
+  user = [];
+
   registerForm: FormGroup;
 
-  constructor(public formbuilder: FormBuilder) { 
+  constructor(public formbuilder: FormBuilder, public postService: PostServiceService, public router: Router,
+    public usuarioService: UsuarioServiceService) { 
     this.registerForm = this.formbuilder.group({
-      text: [null, [Validators.required]]
+      bodyText: [null, [Validators.required]]
     })
-   }
-
-  ngOnInit() {
   }
 
-  submitForm(form) {
-    console.log(form);
-    console.log(form.value);
+  ngOnInit() {
+    this.getDetails();
+  }
+
+  getDetails(){
+    this.usuarioService.getDetails().subscribe((res) => {
+      this.user = res.user;
+      console.log(this.user);
+    })
+  }
+
+  createPost(form){
+    let regFomr = form.value;
+    this.postService.createPost(regFomr).subscribe((res) => {
+      this.newPost = res;
+      console.log(this.newPost);
+      this.router.navigate(['/home']);
+    });
   }
 }

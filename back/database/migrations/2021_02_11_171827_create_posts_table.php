@@ -17,10 +17,10 @@ class CreatePostsTable extends Migration
             $table->id();
             $table->string('bodyText');
             $table->foreignId('user_id');
-            $table->string('media');
+            $table->string('media')->nullable();
             $table->float('like')->nullable();
             $table->string('comment')->nullable();
-            $table->string('retweet');
+            $table->string('retweet')->nullable();
             $table->timestamps();
         });
 

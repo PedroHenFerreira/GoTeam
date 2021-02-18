@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('contact');
             $table->string('lolUsername');
             $table->string('lolEmail');
-            $table->boolean('admin')->nullable();
+            $table->boolean('admin')->default(false)->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

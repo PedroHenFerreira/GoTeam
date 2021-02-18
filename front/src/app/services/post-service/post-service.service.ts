@@ -18,8 +18,9 @@ export class PostServiceService {
     }
   }
 
-  createPost():Observable <any> {
-    return this.http.get(this.apiUrl + 'createPost' + this.httpHeaders);
+  createPost(form):Observable <any> {
+    this.httpHeaders.headers['Authorization'] = 'Bearer ' + localStorage.getItem('userToken');
+    return this.http.post(this.apiUrl + 'createPost', form, this.httpHeaders);
   }
 
   listPosts():Observable <any> {
