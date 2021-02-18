@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationServiceService } from '../services/authetication-service/authentication-service.service';
 import { UsuarioServiceService } from  '../services/usuario-service/usuario-service.service';
+import { PostServiceService } from '../services/post-service/post-service.service';
 
 @Component({
   selector: 'app-home',
@@ -15,7 +16,7 @@ export class HomePage implements OnInit {
   logout: [];
 
   constructor(public autheticationService: AuthenticationServiceService,
-  public usuarioService: UsuarioServiceService) {}
+  public usuarioService: UsuarioServiceService, public postService: PostServiceService) {}
 
   ngOnInit() {
     this.getDetails();
@@ -25,6 +26,19 @@ export class HomePage implements OnInit {
     this.usuarioService.getDetails().subscribe((res) => {
       this.user = res.user;
       console.log(this.user);
+    })
+  }
+
+  postEdit(id, form){
+    let regForm = form.value;
+    this.postService.editPost(id, regForm).subscribe((res) => {
+      console.log(res);
+    })
+  }
+
+  deletePost(id){
+    this.postService.deletePost(id).subscribe((res) => {
+      console.log(res)
     })
   }
 

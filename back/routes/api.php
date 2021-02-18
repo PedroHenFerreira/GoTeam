@@ -58,7 +58,7 @@ Route::post('login', [passportController::class, 'login']);
 Route::group(['middleware' => 'auth:api'], function(){
     Route::get('logout', [passportController::class, 'logout']);
     Route::get('getDetails', [passportController::class, 'getDetails']);
-    Route::post('createPost', [userController::class, 'createPost']);
+    Route::post('createPost', [postController::class, 'createPost']);
     Route::put('post/{id}', [postController::class, 'updatePost']);
     Route::delete('deletePost/{id}', [postController::class, 'deletePost']);
     Route::post('comment/{post_id}', [commentController::class, 'createComment']);
