@@ -26,7 +26,8 @@ export class AuthenticationServiceService {
     return this.http.post(this.apiUrl + 'register', form);
   }
 
-  userLogout():Observable <any>{
-    return this.http.get(this.apiUrl + 'userLogout', this.httpHeaders);
+  logout():Observable <any>{
+    this.httpHeaders.headers["Authorization"] = "Bearer " + localStorage.getItem('userToken');
+    return this.http.get(this.apiUrl + 'logout', this.httpHeaders);
   }
 }
