@@ -31,13 +31,37 @@
     font-size: 0.9em;
 }
 
+.edit-post-button {
+    color: white;
+
+    margin-left: -2.5vw;
+    margin-top: 5vh;
+
+    height: 25px;
+    width: 25px;
+}
+
+.delete-post-button {
+    color: white;
+
+    margin-left: -3vw;
+    margin-top: 4vh;
+
+    height: 25px;
+    width: 25px;
+}
+
 .post-text-field {
     background-color: rgb(30, 30, 30);
 
     border-color: #00CEA9;
     border-style: solid;
     margin-top: 2vh;
+    margin-left: 1vw;
     height: 140px;
+    width: 272px;
+
+    margin-bottom: 0;
 }
 
 .post-text {
@@ -48,6 +72,22 @@
 
     font-size: 1em;
     font-weight: 400;
+}
+
+.row {
+    margin-top: -0.75vh;
+}
+
+.like {
+    margin-left: -1vw;
+}
+
+.comment {
+    margin-left: -5.5vw;
+}
+
+.share {
+    margin-left: -11vw;
 }
 
 .button-like {

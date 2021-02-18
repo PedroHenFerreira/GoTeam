@@ -87,15 +87,16 @@ export class ProfilePage implements OnInit {
     }) 
   }
 
-  editPost() {
-    this.postService.editPost().subscribe((res) => {
+  editPost(id, form) {
+    let regForm = form.value;
+    this.postService.editPost(id, regForm).subscribe((res) => {
       this.postEdit = res;
       console.log(this.postEdit);
     }) 
   }
 
-  deletePost() {
-    this.postService.deletePost().subscribe((res) => {
+  deletePost(id) {
+    this.postService.deletePost(id).subscribe((res) => {
       this.postDelete = res;
       console.log(this.postDelete);
     }) 
