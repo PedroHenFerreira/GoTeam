@@ -13,14 +13,14 @@
     </ion-grid>
     
   
-  <form [formGroup]="commentForm" (ngSubmit) = "submitForm(commentForm)">
+  <form [formGroup]="commentForm" (ngSubmit) = "createComment(commentForm,1)">
       <ion-grid class="pubGrid">
         <ion-row class="orgComments">
           <ion-col class="commentsImgCol" size="2">
             <img class="commentsImg" src="../assets/icon/ShacoLoadScreen_7.jpg"></ion-col>
           <ion-col>
             <ion-card class="userCommentsCard">
-              <ion-textarea wrap="soft" class="commentInput" type="text" formControlName="comment" placeholder="Comentar"></ion-textarea> 
+              <ion-textarea wrap="soft" class="commentInput" type="text" formControlName="bodyText" placeholder="Comentar"></ion-textarea> 
             </ion-card>
           </ion-col>
         </ion-row>

@@ -18,19 +18,22 @@ export class CommentServiceService {
     }
   }
 
-  createComment():Observable <any> {
-    return this.http.get(this.apiUrl + 'createComment' + this.httpHeaders);
+  createComment(form,id):Observable <any> {
+    this.httpHeaders.headers['Authorization'] = 'Bearer ' + localStorage.getItem('userToken');
+    return this.http.post(this.apiUrl + 'comment/' + id ,form, this.httpHeaders);
   }
 
-  editComment():Observable <any> {
-    return this.http.get(this.apiUrl + 'editComent' + this.httpHeaders);
+  editComment(id,form):Observable <any> {
+    this.httpHeaders.headers['Authorization'] = 'Bearer ' + localStorage.getItem('userToken');
+    return this.http.put(this.apiUrl + 'comment/'+ id, form, this.httpHeaders);
   }
 
   listComments():Observable <any> {
     return this.http.get(this.apiUrl + 'listComments' + this.httpHeaders);
   }
 
-  deleteComment():Observable <any> {
-    return this.http.get(this.apiUrl + 'deleteComment' + this.httpHeaders);
+  deleteComment(id):Observable <any> {
+    this.httpHeaders.headers['Authorization'] = 'Bearer ' + localStorage.getItem('userToken');
+    return this.http.delete(this.apiUrl + 'comment/'+ id, this.httpHeaders);
   }
 }

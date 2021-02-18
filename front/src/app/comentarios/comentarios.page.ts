@@ -11,8 +11,8 @@ export class ComentariosPage implements OnInit {
   
   commentForm: FormGroup;
 
-  commentCreate: [];
-  commentEdit: [];
+  newComment: [];
+  editComment: [];
   commentList: [];
   commentDelete: [];
 
@@ -23,28 +23,26 @@ export class ComentariosPage implements OnInit {
 
   constructor(public formbuilder: FormBuilder, public commentService: CommentServiceService) {
     this.commentForm = this.formbuilder.group({
-      comment:[null, [Validators.required, Validators.maxLength(300)]],
+      bodyText:[null, [Validators.required, Validators.maxLength(300)]],
     })
    }
 
   ngOnInit() {
-    this.postCreateComment();
-    this.putEditComment();
     this.getListComment();
-    this.delComment();
   }
 
-  postCreateComment(){
-    this.commentService.createComment().subscribe((res) => {
-      this.commentCreate = res;
-      console.log(this.commentCreate);
+  createComment(form,id){
+    console.log(form.value);
+    this.commentService.createComment(form.value,id).subscribe((res) => {
+      this.newComment = res;
+      console.log(this.newComment);
     });
   } 
 
-  putEditComment(){
-    this.commentService.editComment().subscribe((res) => {
-      this.commentEdit = res;
-      console.log(this.commentEdit);
+  putEditComment(id,form){
+    console.log(form.value)
+    this.commentService.editComment(id,form.value).subscribe((res) => {
+      console.log(res);
     });
   }
 
@@ -55,10 +53,9 @@ export class ComentariosPage implements OnInit {
     });
   }
 
-  delComment(){
-    this.commentService.deleteComment().subscribe((res) => {
-      this.commentDelete = res;
-      console.log(this.commentDelete);
+  delComment(id){
+    this.commentService.deleteComment(id).subscribe((res) => {
+      console.log(res);
     });
   }
 

@@ -42,11 +42,11 @@ export class HomePage implements OnInit {
     })
   }
 
-  logoutUser(){
-    this.autheticationService.userLogout().subscribe((res) => {
-      this.logout = res;
-      console.log(this.logout);
-    });
-  }
+  // logoutUser(){
+  //   this.autheticationService.userLogout().subscribe((res) => {
+  //     this.logout = res;
+  //     console.log(this.logout);
+  //   });
+  // }
 
 }
