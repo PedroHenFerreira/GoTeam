@@ -21,7 +21,9 @@
 
   <div class="feed-noticias">Feed de notícias:</div>
   <br><br><br><br><br>
-  <app-card-post></app-card-post>
+  <div class="post">
+    <app-card-post *ngFor='let post of postsList' [post]='post'></app-card-post>
+  </div>
 </ion-content>
 
 <app-tab-menu></app-tab-menu>
