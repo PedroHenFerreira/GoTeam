@@ -29,8 +29,8 @@ export class AppComponent {
       console.log(res);
       localStorage.removeItem('userToken');
       this.router.navigate(['/login']);
-
-  
+    })
+  }
 
   getDetails(){
     this.usuarioService.getDetails().subscribe((res) => {
