@@ -34,6 +34,7 @@ export class LoginPage implements OnInit {
     this.authenticationService.login(form.value).subscribe((res) => {
       console.log(res);
       localStorage.setItem('userToken', res.token);
+      localStorage.setItem('user_id', res.user.id);
       this.router.navigate(['/home']);
     });
   }

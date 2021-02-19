@@ -17,7 +17,11 @@
             </ion-card>
           </ion-col>
     
-          <ion-col>
+          <ion-col *ngIf='user.admin'>
+            <ion-icon class="delete-post-button" name='trash-outline' (click)='deletePost(post.id)'></ion-icon>
+          </ion-col>
+
+          <ion-col *ngIf='user.id===post.user_id'>
             <ion-icon class="edit-post-button" name='create-outline'></ion-icon>
             <ion-icon class="delete-post-button" name='trash-outline' (click)='deletePost(post.id)'></ion-icon>
           </ion-col>

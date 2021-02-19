@@ -19,11 +19,12 @@ class Post {
 export class CardPostComponent implements OnInit {
 
   @Input() post;
+  @Input() user;
   @Output() deleted = new EventEmitter<string>();
 
   users = [];
 
-  user = [];
+  id = localStorage.getItem('user_id');
   
   posts: Post[];
 
