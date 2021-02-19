@@ -83,8 +83,8 @@ class User extends Authenticatable
 
     
     public function userInvites(){
-        return $this->belongsToMany('App\Models\User', 'invites', 'invited', 'makeInvite' );
-    }
+        return $this->belongsToMany('App\Models\User', 'invites', 'makeInvite', 'invited' );
+        }
 
     
     
@@ -117,8 +117,8 @@ class User extends Authenticatable
     
     
     public function userFollowing(){
-        return $this->belongsToMany('App\Models\User','follows', 'follower', 'following');
-    }
+        return $this->belongsToMany('App\Models\User','follows', 'following', 'follower');
+        }
 
 
 
