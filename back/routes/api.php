@@ -81,5 +81,9 @@ Route::group(['middleware' => 'auth:api'], function(){
     Route::post('inviteUser/{id}', [userController::class, 'inviteUser']);
     //Listar posts nos perfis 
     Route::get('profilePosts/{id}', [postController::class, 'profilePosts']);
+    //Like e dislike
+    Route::post('like/{id}',[userController::class, 'like']);
+    Route::post('dislike/{id}',[userController::class, 'dislike']);
+
     
 });
