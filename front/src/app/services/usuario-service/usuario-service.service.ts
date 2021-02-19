@@ -20,7 +20,7 @@ export class UsuarioServiceService {
   constructor(public http: HttpClient, public router: Router) { }
 
   listUsers():Observable <any> {
-    return this.http.get(this.apiUrl + 'listUsers' + this.httpHeaders);
+    return this.http.get(this.apiUrl + 'users', this.httpHeaders);
   }
 
   getDetails():Observable <any> {
@@ -29,8 +29,7 @@ export class UsuarioServiceService {
   }
 
   getUserDetails(id):Observable <any> {
-    this.httpHeaders.headers['Authorization'] = 'Bearer ' + localStorage.getItem('userToken');
-    return this.http.get(this.apiUrl + 'users/' + id , this.httpHeaders);
+    return this.http.get(this.apiUrl + 'users/' + id, this.httpHeaders);
   }
 
   listFollowingUsers():Observable <any> {
