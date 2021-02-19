@@ -15,6 +15,7 @@ export class HomePage implements OnInit {
   isLoggedIn: boolean;
   users=[];
   postsList=[];
+  followingPosts: any[]=[];
 
   logout: [];
 
@@ -35,7 +36,7 @@ export class HomePage implements OnInit {
     this.usuarioService.getDetails().subscribe((res) => {
       this.user = res.user;
       console.log(this.user);
-    })
+    });
   }
 
   listPosts(){
@@ -65,16 +66,16 @@ export class HomePage implements OnInit {
     })
   }
 
-  // logoutUser(){
-  //   this.autheticationService.userLogout().subscribe((res) => {
-  //     this.logout = res;
-  //     console.log(this.logout);
-  //   });
-  // }
-
   postDeleted(event){
     this.listPosts();
     console.log(event);
+  }
+
+  getFollowingPostsUsers(){
+    this.postService.getFollowingPostsUsers().subscribe((res) => {
+      this.followingPosts = res[0];
+      console.log(res);
+    });
   }
 
   getId(event){

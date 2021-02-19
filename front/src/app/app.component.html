@@ -6,7 +6,6 @@
         <div class="infos">
           <ion-grid>
             <ion-row>
-    
                 <ion-col  id="menu_shaco" *ngIf="isLoggedIn">
                   <img src="../assets/icon/ShacoLoadScreen_7.jpg">
                 </ion-col>
@@ -25,21 +24,6 @@
                 </ion-col>
               
 
-            </ion-row>
-            <ion-row *ngIf="isLoggedIn">
-              <ion-col class ="follow" id="followers">
-                <h5>564 seguidores</h5>
-              </ion-col>
-              <ion-col class="follow" id="following">
-                <h5>459 seguindo</h5>
-              </ion-col>
-            </ion-row>
-          </ion-grid>
-        </div>
-      
-        
-        
-        <ion-list id="inbox-list">
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
             <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
               <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
