@@ -16,7 +16,7 @@ export class VisitanteGuard implements CanActivate {
       if(this.usuarioService.isLogged()){
         return true;
       } else {
-        return this.router.navigate(['/login']);
+        return this.router.navigate(['/home']);
       }
   }
   

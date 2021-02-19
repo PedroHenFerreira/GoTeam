@@ -6,16 +6,26 @@
         <div class="infos">
           <ion-grid>
             <ion-row>
-              <ion-col id="menu_shaco">
-                <img src="../assets/icon/ShacoLoadScreen_7.jpg">
-              </ion-col>
-              <ion-col id="titles">
-                <h3>{{user.name}}</h3>
-                <h6>@{{user.name}}</h6>
-              </ion-col>
               
+              <div *ngIf="isLoggedIn">
+                <ion-col id="menu_shaco">
+                  <img src="../assets/icon/ShacoLoadScreen_7.jpg">
+                </ion-col>
+                <ion-col id="titles">
+                    <h3>{{user.name}}</h3>
+                    <h6>@{{user.name}}</h6>
+                </ion-col>
+              </div>
+
+              <div *ngIf="!isLoggedIn">
+                <ion-col id="visitante">
+                    <h3 class="visitanteText">Bem-vindo(a),</h3>
+                    <h3 class="visitanteText2">Visitante</h3>
+                </ion-col>
+              </div>
+
             </ion-row>
-            <ion-row>
+            <ion-row *ngIf="isLoggedIn">
               <ion-col class ="follow" id="followers">
                 <h5>564 seguidores</h5>
               </ion-col>

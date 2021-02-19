@@ -20,9 +20,13 @@ export class AppComponent {
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
   user = [];
+  isLoggedIn: boolean = localStorage.getItem('userToken') !==null;
 
   constructor(public authenticationService: AuthenticationServiceService,public router: Router,
-  public usuarioService: UsuarioServiceService) {this.getDetails();}
+  public usuarioService: UsuarioServiceService) {
+    this.getDetails();
+    
+  }
   
   logout(){
     this.authenticationService.logout().subscribe((res) => {
@@ -38,4 +42,6 @@ export class AppComponent {
       console.log(this.user);
     });
   }
+
+
 }

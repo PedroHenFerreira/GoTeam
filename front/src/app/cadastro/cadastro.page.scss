@@ -2,7 +2,7 @@ ion-content {
     .arrow-back {
         height: 30px;
         width: 40px;
-
+        color:#FDFAFA;
         margin-left: 2vw;
         margin-top: 1.5vh;
     }
@@ -34,6 +34,10 @@ ion-content {
         }
     }
 
+    .inputCadastro{
+        color:#FDFAFA;
+    }
+
     // ######################################### register-form #############################################
     .register-form {
         margin-top: 35vh;
@@ -61,6 +65,7 @@ ion-content {
     .input-label{
         font-size: 1.1em;
         font-family: 'Ubuntu', sans-serif;
+        color:#FDFAFA;
     }
 
     // ######################################### botao-enviar #############################################
@@ -71,5 +76,8 @@ ion-content {
         width: 280px;
         margin-left: 13vw;
         margin-top: 7vh;
+        color:#FDFAFA;
     }
+
+
 }
