@@ -67,6 +67,8 @@ Route::group(['middleware' => 'auth:api'], function(){
     //seguir ou deixar de seguir um usuario
     Route::post('follow/{id}', [userController::class, 'followUser']);
     Route::post('unfollow/{id}', [userController::class, 'unfollowUser']);
-    //Listar post de usuarios que você segue
+    //Listar posts de usuarios que você segue
     Route::get('readPosts', [postController::class, 'readFollowingPosts']);
+    //Listar posts nos perfis 
+    Route::get('profilePosts/{id}', [postController::class, 'profilePosts']);
 });

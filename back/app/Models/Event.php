@@ -17,6 +17,9 @@ class Event extends Model
         $this->save();
     }
 
+    
+    
+    
     public function updateEvent(Request $request){
         if ($request->teams){
             $this->teams = $request->teams;  
@@ -35,7 +38,12 @@ class Event extends Model
         }
         $this->save();
     }
+    
+    
+    
     public function user(){
         return $this->belongsTo('App\Models\User');
-       }
+    }
+
+    
 }
