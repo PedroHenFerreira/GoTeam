@@ -82,4 +82,10 @@ export class HomePage implements OnInit {
     localStorage.setItem('postId',event);
   }
 
+  likePost(id){
+    this.usuarioService.likePost(id).subscribe((res) => {
+      console.log(res);
+    });
+  }
+
 }
