@@ -75,7 +75,7 @@ class postController extends Controller
       public function deletePost ($id){
         $user = Auth::user();
         $post = Post::find($id);
-        if ($post->user_id == $user->id)
+        if ($post->user_id == $user->id || $user->admin == 1)
         {Post::destroy($id);
         return response()->json(['Sucesso']);}
         else {
