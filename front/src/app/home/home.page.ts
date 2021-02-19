@@ -23,7 +23,6 @@ export class HomePage implements OnInit {
   ngOnInit() {
     this.getDetails();
     this.listPosts();
-    // this.postDeleted($event);
   }
 
   ionViewWillEnter(){
