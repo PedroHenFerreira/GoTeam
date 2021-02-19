@@ -51,4 +51,12 @@ class userController extends Controller
   }
 
 
+  public function inviteUser ($id){
+    $user = Auth::user();
+    $user->userInvites()->attach($id);
+    return response()->json(['Sucesso', 200]);
+  }
+  
+
+
 }

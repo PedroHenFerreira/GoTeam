@@ -69,4 +69,6 @@ Route::group(['middleware' => 'auth:api'], function(){
     Route::post('unfollow/{id}', [userController::class, 'unfollowUser']);
     //Listar post de usuarios que você segue
     Route::get('readPosts', [postController::class, 'readFollowingPosts']);
+    //Convidar usuario 
+    Route::post('inviteUser/{id}', [userController::class, 'inviteUser']);
 });
