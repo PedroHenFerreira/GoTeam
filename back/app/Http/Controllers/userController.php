@@ -93,6 +93,25 @@ class userController extends Controller
 
 
   }
+  public function like($id){
+    $user = Auth::user();
+    $user->likes()->attach($id);
+    $post = Post::find($id);
+    $post->like++;
+    $post->save();  
+    return response()->json(['Sucesso', 200]);
+
+  }
+
+  public function dislike($id){
+    $user = Auth::user();
+    $user->likes()->detach($id);
+    $post = Post::find($id);
+    $post->like--;
+    $post->save();
+    return response()->json(['Sucesso', 200]);
+  }
+
   
 
 
