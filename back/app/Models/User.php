@@ -112,12 +112,12 @@ class User extends Authenticatable
     
     
     public function userFollower(){
-        return $this->belongsToMany('App\Models\User','follows', 'follower', 'following');
+        return $this->belongsToMany('App\Models\User','follows', 'following', 'follower');
     }
     
     
     public function userFollowing(){
-        return $this->belongsToMany('App\Models\User','follows', 'following', 'follower');
+        return $this->belongsToMany('App\Models\User','follows', 'follower', 'following');
         }
 
 

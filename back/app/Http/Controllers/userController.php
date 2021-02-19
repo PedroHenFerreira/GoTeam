@@ -76,6 +76,23 @@ class userController extends Controller
     $user->userInvites()->attach($id);
     return response()->json(['Sucesso', 200]);
   }
+
+//Lista das pessoas que o usuario segue
+  public function following ($id){
+    $user = User::find($id);
+    $following = $user->userFollowing()->get();
+    return response()->json([$following]);
+  }
+
+
+  //Lista das pessoas que seguem o usuario
+  public function follower ($id){
+    $user = User::find($id);
+    $follower = $user->userFollower()->get();
+    return response()->json([$follower]);
+
+
+  }
   
 
 

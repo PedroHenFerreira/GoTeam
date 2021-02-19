@@ -30,6 +30,12 @@ Route::get('users/{id}', [userController::class, 'readUser']);
 Route::delete('users/{id}', [userController::class, 'deleteUser']);
 Route::get('user/{name}', [userController::class, 'searchUser']);
 
+
+//Following e Follower
+Route::get('following/{id}', [userController::class, 'following']);
+Route::get('follower/{id}', [userController::class, 'follower']);
+
+
 //post
 Route::post('post', [postController::class, 'createPost']);
 Route::get('post', [postController::class, 'readPosts']);
@@ -75,4 +81,5 @@ Route::group(['middleware' => 'auth:api'], function(){
     Route::post('inviteUser/{id}', [userController::class, 'inviteUser']);
     //Listar posts nos perfis 
     Route::get('profilePosts/{id}', [postController::class, 'profilePosts']);
+    
 });
