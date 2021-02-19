@@ -10,11 +10,11 @@
   <!-- Essa div dá condição para o botão "voltar" -->
   <div [ngSwitch]='cadastro[0].id'>
     <div *ngSwitchCase="1">
-      <a href="/login"><ion-icon class="arrow-back" name='arrow-back' color='dark'></ion-icon></a>
+      <a href="/login"><ion-icon class="arrow-back" name='arrow-back'></ion-icon></a>
     </div>
 
     <div *ngSwitchCase="2">
-      <a href="/cadastro"><ion-icon class="arrow-back" name='arrow-back' color='dark'></ion-icon></a>
+      <a href="/cadastro"><ion-icon class="arrow-back" name='arrow-back'></ion-icon></a>
     </div>
   </div>
 
@@ -26,18 +26,18 @@
   <form class="register-form" [formGroup]='registerForm' (ngSubmit)='registerUser(registerForm)'>
     <ion-list class="register-list" *ngFor='let label of labels'>
       <ion-label class="input-label" position='stacked'>{{label.label}}:</ion-label>
-      <ion-input type='{{label.type}}' placeholder='{{label.label}}' formControlName='{{label.formControlName}}'></ion-input>
+      <ion-input class="inputCadastro" type='{{label.type}}' placeholder='{{label.label}}' formControlName='{{label.formControlName}}'></ion-input>
     </ion-list>
 
     
     <!-- Essa tag cria condições para o botão na pag cadastro -->
     <div [ngSwitch]='cadastro[0].id'>
       <div *ngSwitchCase='1'>
-        <ion-button class="botao-enviar" size='large' color='dark' (click)='prosseguirCadastro()'>{{buttonLabel}}</ion-button>
+        <ion-button class="botao-enviar" size='large' color='light' (click)='prosseguirCadastro()'>{{buttonLabel}}</ion-button>
       </div>
 
       <div *ngSwitchCase='2'>
-        <ion-button class="botao-enviar" type='submit' size='large' color='dark' (click)='prosseguirCadastro()' [disabled]='registerForm.invalid'>{{buttonLabel}}</ion-button>
+        <ion-button class="botao-enviar" type='submit' size='large' color='light' (click)='prosseguirCadastro()' [disabled]='registerForm.invalid'>{{buttonLabel}}</ion-button>
       </div>
     </div>
 

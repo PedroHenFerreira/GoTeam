@@ -20,9 +20,13 @@ export class AppComponent {
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
   user = [];
+  isLoggedIn: boolean;
 
   constructor(public authenticationService: AuthenticationServiceService,public router: Router,
-  public usuarioService: UsuarioServiceService) {this.getDetails();}
+  public usuarioService: UsuarioServiceService) {
+    this.getDetails();
+    this.isLoggedIn = this.usuarioService.isLogged();
+  }
   
   logout(){
     this.authenticationService.logout().subscribe((res) => {

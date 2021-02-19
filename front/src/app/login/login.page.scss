@@ -20,31 +20,20 @@ h1,h3,h5,.or,p{
 }
 
 .inputInstruction{
-    font-size:1.3em;
+    font-size:1.4em;
     margin-bottom:0;
     margin-left:10%;
+    text-shadow: 3.5px 3.5px #000000;
 }
 
 .instructionCol{
     padding-bottom:0;
 }
 
-.inputCard{
-    --background: rgba(196, 196, 196, 0.5);
-    border-radius: 10px;
-    width:280px;
-    height:48px;
-    margin-bottom:0;
-    margin-left:12%;
-    margin-top:0;
-    margin-right:0;
-}
-
 .inputTextLogin{
     color:#FDFAFA;
-    font-size:1.3em;
-    padding-left:10px !important;
-    padding-top:5px !important;
+    font-size:1.2em;
+    padding-left:46px !important;
 }
 
 .inputText{
@@ -55,6 +44,15 @@ h1,h3,h5,.or,p{
 
 .forgotPasswordCol{
     text-align:end;
+    margin-left:10px;
+}
+
+.visitorCol{
+    text-align:start;
+}
+
+.lineCol{
+    border-left:1px solid #FDFAFA;
 }
 
 .forgotPasswordText{

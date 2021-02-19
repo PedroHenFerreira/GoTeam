@@ -12,7 +12,7 @@ import { PostServiceService } from '../services/post-service/post-service.servic
 export class HomePage implements OnInit {
 
   user=[];
-
+  isLoggedIn: boolean;
   logout: [];
 
   constructor(public autheticationService: AuthenticationServiceService,
@@ -20,6 +20,7 @@ export class HomePage implements OnInit {
 
   ngOnInit() {
     this.getDetails();
+    this.isLoggedIn= this.usuarioService.isLogged();
   }
 
   getDetails(){

@@ -12,7 +12,7 @@ export class ComentariosPage implements OnInit {
   commentForm: FormGroup;
 
   newComment: [];
-  editComment: [];
+  commentEdit: [];
   commentList: [];
   commentDelete: [];
 
@@ -28,7 +28,8 @@ export class ComentariosPage implements OnInit {
    }
 
   ngOnInit() {
-    this.getListComment();
+    
+    this.delComment(5);
   }
 
   createComment(form,id){
@@ -39,14 +40,14 @@ export class ComentariosPage implements OnInit {
     });
   } 
 
-  putEditComment(id,form){
+  editComment(form, id){
     console.log(form.value)
     this.commentService.editComment(id,form.value).subscribe((res) => {
       console.log(res);
     });
   }
 
-  getListComment(){
+  listComment(){
     this.commentService.listComments().subscribe((res) => {
       this.commentList = res;
       console.log(this.commentList);

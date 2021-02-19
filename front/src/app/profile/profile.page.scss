@@ -239,16 +239,16 @@ h3,h5,h4,h6,p{
 }
 
 .comments{
-        display:flex;
-        justify-content:space-between;
-        --background:#070B2D;
-        border:1px solid #00CEA9;
-        border-radius:15px;
-        width:38%;
-        height:5%;
-        margin:0;
-        margin-left:7%;
-        margin-top:15%;
+    display:flex;
+    justify-content:space-between;
+    --background:#070B2D;
+    border:1px solid #00CEA9;
+    border-radius:15px;
+    width:38%;
+    height:5%;
+    margin:0;
+    margin-left:7%;
+    margin-top:15%;
 }
 
 .commentCardBg{
@@ -305,6 +305,24 @@ h3,h5,h4,h6,p{
     border:1px solid black;
     height:95%;
     width:25%;
+}
+
+.feedCard{
+    display:flex;
+    justify-content:space-between;
+    --background:#070B2D;
+    border:1px solid #00CEA9;
+    border-radius:15px;
+    width:70px;
+    height:5%;
+    margin:0;
+    margin-left:7%;
+    margin-top:15%;
+}
+
+.feedTitle{
+    margin-top:5%;
+    margin-left:10%;
 }
 
 
