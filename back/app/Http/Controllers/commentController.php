@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Comment;
+use Illuminate\Database\Eloquent\Builder;
 use Auth;
 
 class commentController extends Controller
@@ -45,11 +46,18 @@ class commentController extends Controller
     public function deleteComment (Request $request, $id){
         $user = Auth::user();
         $comment = Comment::find($id);
-        if ($comment->user_id == $user->id)
+        if ($comment->user_id == $user->id || $user->admin == 1)
         {Comment::destroy($id);
         return response()->json(['Sucesso']);}
         else {
         return response()->json('Erro', 403);
             }
+    }
+
+
+    public function commentsList($id){
+        $post = Post::find($id);
+        $comments = $post->comments()->get();
+        return response()->json([$comments]);
     }
 }

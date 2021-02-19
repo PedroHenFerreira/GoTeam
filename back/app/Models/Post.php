@@ -50,4 +50,14 @@ class Post extends Model
     }
 
 
+    public function comments(){
+        return $this->hasMany('App\Models\Comment');
+    }
+
+
+    public function userLikes(){
+        return $this->belongsToMany('App\Models\User', 'likes', 'post_id', 'user_id');
+    }
+
+
 }

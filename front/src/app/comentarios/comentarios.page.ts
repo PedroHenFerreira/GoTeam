@@ -13,8 +13,9 @@ export class ComentariosPage implements OnInit {
 
   newComment: [];
   commentEdit: [];
-  commentList: [];
+  commentsList: [];
   commentDelete: [];
+  postId = localStorage.getItem('postId');
 
   submitForm(form){
     console.log(form);
@@ -28,14 +29,17 @@ export class ComentariosPage implements OnInit {
    }
 
   ngOnInit() {
-    
-    this.delComment(5);
+    console.log(this.postId);
+    this.listComment();
+
   }
 
-  createComment(form,id){
+  createComment(form){
     console.log(form.value);
-    this.commentService.createComment(form.value,id).subscribe((res) => {
+    this.commentService.createComment(form.value,this.postId).subscribe((res) => {
       this.newComment = res;
+      this.commentForm.reset();
+      this.listComment();
       console.log(this.newComment);
     });
   } 
@@ -48,9 +52,9 @@ export class ComentariosPage implements OnInit {
   }
 
   listComment(){
-    this.commentService.listComments().subscribe((res) => {
-      this.commentList = res;
-      console.log(this.commentList);
+    this.commentService.listComments(this.postId).subscribe((res) => {
+      this.commentsList = res.Sucesso;
+      console.log(this.commentsList);
     });
   }
 

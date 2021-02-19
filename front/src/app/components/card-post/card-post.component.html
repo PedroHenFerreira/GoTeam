@@ -39,7 +39,7 @@
     
           <ion-col>
             <div class="comment">
-              <a routerLink='/comentarios'>
+              <a routerLink='/comentarios' (click)="getPostId(post.id)">
                 <ion-icon class="button-comment" name='chatbox-outline'></ion-icon>
                 <div class="num-comment">700</div>
               </a>

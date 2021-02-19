@@ -28,8 +28,8 @@ export class CommentServiceService {
     return this.http.put(this.apiUrl + 'comment/'+ id, form, this.httpHeaders);
   }
 
-  listComments():Observable <any> {
-    return this.http.get(this.apiUrl + 'listComments' + this.httpHeaders);
+  listComments(id):Observable <any> {
+    return this.http.get(this.apiUrl + 'comments/' +id ,this.httpHeaders);
   }
 
   deleteComment(id):Observable <any> {

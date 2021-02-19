@@ -66,13 +66,6 @@ export class HomePage implements OnInit {
     })
   }
 
-  // logoutUser(){
-  //   this.autheticationService.userLogout().subscribe((res) => {
-  //     this.logout = res;
-  //     console.log(this.logout);
-  //   });
-  // }
-
   postDeleted(event){
     this.listPosts();
     console.log(event);
@@ -83,6 +76,10 @@ export class HomePage implements OnInit {
       this.followingPosts = res[0];
       console.log(res);
     });
+  }
+
+  getId(event){
+    localStorage.setItem('postId',event);
   }
 
 }

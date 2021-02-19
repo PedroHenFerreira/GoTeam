@@ -30,6 +30,12 @@ Route::get('users/{id}', [userController::class, 'readUser']);
 Route::delete('users/{id}', [userController::class, 'deleteUser']);
 Route::get('user/{name}', [userController::class, 'searchUser']);
 
+
+//Following e Follower
+Route::get('following/{id}', [userController::class, 'following']);
+Route::get('follower/{id}', [userController::class, 'follower']);
+
+
 //post
 Route::post('post', [postController::class, 'createPost']);
 Route::get('post', [postController::class, 'readPosts']);
@@ -39,15 +45,17 @@ Route::get('post/{id}', [postController::class, 'readPost']);
 //evento
 Route::post('event', [eventController::class, 'createEvent']);
 Route::put('event/{id}', [eventController::class, 'updateEvent']);
-Route::get('event', [eventController::class, 'readEvent']);
+Route::get('event', [eventController::class, 'readEvents']);
 Route::get('event/{id}', [eventController::class, 'readEvent']);
 Route::delete('event/{id}', [eventController::class, 'deleteEvent']);
 
 
 
 //comments
-Route::get('comment', [commentController::class, 'readComment']);
+Route::get('comment', [commentController::class, 'readComments']);
 Route::get('comment/{id}', [commentController::class, 'readComment']);
+Route::get('comments/{id}', [commentController::class, 'commentsList']);
+
 
 
 //register e login
@@ -73,4 +81,9 @@ Route::group(['middleware' => 'auth:api'], function(){
     Route::post('inviteUser/{id}', [userController::class, 'inviteUser']);
     //Listar posts nos perfis 
     Route::get('profilePosts/{id}', [postController::class, 'profilePosts']);
+    //Like e dislike
+    Route::post('like/{id}',[userController::class, 'like']);
+    Route::post('dislike/{id}',[userController::class, 'dislike']);
+
+    
 });

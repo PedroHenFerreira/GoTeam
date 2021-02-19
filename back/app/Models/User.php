@@ -121,6 +121,11 @@ class User extends Authenticatable
     }
 
 
+    public function likes(){
+        return $this->belongsToMany('App\Models\Post', 'likes', 'user_id', 'post_id');
+    }
+
+
 
 
 

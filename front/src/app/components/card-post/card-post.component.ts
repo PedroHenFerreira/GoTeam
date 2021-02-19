@@ -22,6 +22,7 @@ export class CardPostComponent implements OnInit {
   @Input() post;
   @Input() user;
   @Output() deleted = new EventEmitter<string>();
+  @Output() postId = new EventEmitter<number>();
 
   users = [];
 
@@ -48,6 +49,10 @@ export class CardPostComponent implements OnInit {
   toPostEdit(id){
     this.post_id = id;
     this.router.navigate(['/editar-perfil']);
+  }
+  
+  getPostId(id){
+    this.postId.emit(id);
   }
 
 }

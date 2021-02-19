@@ -25,9 +25,8 @@
 
   <div class="feed-noticias">Feed de notícias:</div>
   <br><br><br><br><br>
-
-  <div class="post" *ngIf='isLoggedIn'>
-    <app-card-post *ngFor='let post of postsList' [post]='post' [user]='user' (deleted)='postDeleted($event)'></app-card-post>
+  <div class="post">
+    <app-card-post *ngFor='let post of postsList' [post]='post' [user]='user' (deleted)='postDeleted($event)' (postId)='getId($event)'></app-card-post>
   </div>
 
   <div class="post" *ngIf='!isLoggedIn'>
