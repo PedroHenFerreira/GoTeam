@@ -77,4 +77,8 @@ export class HomePage implements OnInit {
     console.log(event);
   }
 
+  getId(event){
+    localStorage.setItem('postId',event);
+  }
+
 }

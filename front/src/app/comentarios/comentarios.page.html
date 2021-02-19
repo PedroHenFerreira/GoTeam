@@ -13,7 +13,7 @@
     </ion-grid>
     
   
-  <form [formGroup]="commentForm" (ngSubmit) = "createComment(commentForm,1)">
+  <form [formGroup]="commentForm" (ngSubmit) = "createComment(commentForm,postId)">
       <ion-grid class="pubGrid">
         <ion-row class="orgComments">
           <ion-col class="commentsImgCol" size="2">
@@ -34,10 +34,7 @@
       </ion-grid>
   </form>
 
-  <app-post-comentario></app-post-comentario>
-  <app-post-comentario></app-post-comentario>
-  <app-post-comentario></app-post-comentario>
-  <app-post-comentario></app-post-comentario>
-  <app-post-comentario></app-post-comentario>
+  <app-post-comentario *ngFor="let comment of comments" [comment] = "comment"></app-post-comentario>
+  
 
 </ion-content>
