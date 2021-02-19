@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { VisitanteGuard } from './guards/visitante/visitante.guard';
+import { UsuarioGuard } from './guards/usuario/usuario.guard';
 
 const routes: Routes = [
   {
@@ -14,7 +15,8 @@ const routes: Routes = [
   },
   {
     path: 'cadastro',
-    loadChildren: () => import('./cadastro/cadastro.module').then( m => m.CadastroPageModule)
+    loadChildren: () => import('./cadastro/cadastro.module').then( m => m.CadastroPageModule),
+    canActivate: [UsuarioGuard]
   },
   {
     path: 'home',
@@ -31,7 +33,8 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule),
+    canActivate: [UsuarioGuard]
   },
   {
     path: 'editar-perfil',
