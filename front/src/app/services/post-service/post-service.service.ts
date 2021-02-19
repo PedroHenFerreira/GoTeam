@@ -28,11 +28,11 @@ export class PostServiceService {
   }
 
   listFollowingPosts():Observable <any> {
-    return this.http.get(this.apiUrl + 'listFollowingPosts' + this.httpHeaders);
+    return this.http.get(this.apiUrl + 'listFollowingPosts', this.httpHeaders);
   }
 
   showThisPost():Observable <any> {
-    return this.http.get(this.apiUrl + 'showThisPost' + this.httpHeaders);
+    return this.http.get(this.apiUrl + 'showThisPost', this.httpHeaders);
   }
 
   editPost(id, form):Observable <any> {

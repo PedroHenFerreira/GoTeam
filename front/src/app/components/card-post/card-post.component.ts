@@ -21,6 +21,7 @@ export class CardPostComponent implements OnInit {
   @Input() post;
   @Input() user;
   @Output() deleted = new EventEmitter<string>();
+  @Output() postId = new EventEmitter<number>();
 
   users = [];
 
@@ -41,6 +42,10 @@ export class CardPostComponent implements OnInit {
       console.log(res);
       this.deleted.emit("Post deletado");
     })
+  }
+
+  getPostId(id){
+    this.postId.emit(id);
   }
 
 }
