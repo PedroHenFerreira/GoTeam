@@ -20,12 +20,12 @@ export class AppComponent {
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
   user = [];
-  isLoggedIn: boolean;
+  isLoggedIn: boolean = localStorage.getItem('userToken') !==null;
 
   constructor(public authenticationService: AuthenticationServiceService,public router: Router,
   public usuarioService: UsuarioServiceService) {
     this.getDetails();
-    this.isLoggedIn = this.usuarioService.isLogged();
+    
   }
   
   logout(){
@@ -42,4 +42,6 @@ export class AppComponent {
       console.log(this.user);
     })
   }
+
+
 }
