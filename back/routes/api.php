@@ -39,15 +39,17 @@ Route::get('post/{id}', [postController::class, 'readPost']);
 //evento
 Route::post('event', [eventController::class, 'createEvent']);
 Route::put('event/{id}', [eventController::class, 'updateEvent']);
-Route::get('event', [eventController::class, 'readEvent']);
+Route::get('event', [eventController::class, 'readEvents']);
 Route::get('event/{id}', [eventController::class, 'readEvent']);
 Route::delete('event/{id}', [eventController::class, 'deleteEvent']);
 
 
 
 //comments
-Route::get('comment', [commentController::class, 'readComment']);
+Route::get('comment', [commentController::class, 'readComments']);
 Route::get('comment/{id}', [commentController::class, 'readComment']);
+Route::get('comments/{id}', [commentController::class, 'commentsList']);
+
 
 
 //register e login
