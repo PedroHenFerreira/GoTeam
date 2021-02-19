@@ -6,10 +6,10 @@
   <img class="bg-img" src="../../assets/GoTeam Imagens/Home-bg.png">
 
   <div class="home-text" *ngIf="isLoggedIn">
+    <a routerLink='/profile'><img class="profile-img" src="../../assets/GoTeam Imagens/shaco.jpg"></a>
     <div class="home-text-line-1">Bem-vindo(a),</div>
     <div class="home-text-line-2">{{user.name}}</div>
     <div class="home-text-line-3">@{{user.name}}</div>
-    <a routerLink='/profile'><img class="profile-img" src="../../assets/GoTeam Imagens/shaco.jpg"></a>
   </div>
 
   <div class="home-text" *ngIf="!isLoggedIn">
@@ -25,8 +25,13 @@
 
   <div class="feed-noticias">Feed de notícias:</div>
   <br><br><br><br><br>
-  <div class="post">
+
+  <div class="post" *ngIf='isLoggedIn'>
     <app-card-post *ngFor='let post of postsList' [post]='post' [user]='user' (deleted)='postDeleted($event)'></app-card-post>
+  </div>
+
+  <div class="post" *ngIf='!isLoggedIn'>
+    <app-card-following-post *ngFor='let post of postsList' [post]='post' [user]='user' (deleted)='postDeleted($event)'></app-card-following-post>
   </div>
 </ion-content>
 

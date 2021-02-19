@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { PostServiceService } from '../../services/post-service/post-service.service';
 import { UsuarioServiceService } from '../../services/usuario-service/usuario-service.service';
+import { Router } from '@angular/router';
 
 class Post {
   id: number;
@@ -25,12 +26,13 @@ export class CardPostComponent implements OnInit {
   users = [];
 
   id = localStorage.getItem('user_id');
+  post_id: number;
   
   posts: Post[];
 
   estaLogado: boolean;
 
-  constructor(public postService: PostServiceService, public usuarioService: UsuarioServiceService) {}
+  constructor(public postService: PostServiceService, public usuarioService: UsuarioServiceService, public router: Router) {}
 
   ngOnInit() {
     this.estaLogado = this.usuarioService.isLogged();
@@ -41,6 +43,11 @@ export class CardPostComponent implements OnInit {
       console.log(res);
       this.deleted.emit("Post deletado");
     })
+  }
+
+  toPostEdit(id){
+    this.post_id = id;
+    this.router.navigate(['/editar-perfil']);
   }
 
 }

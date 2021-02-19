@@ -1,4 +1,6 @@
-
+<ion-header>
+  <app-header></app-header>
+</ion-header>
 
 <ion-content>
   
@@ -20,7 +22,7 @@
 
   </ion-segment>
 
-<div [ngSwitch]="type">
+  <div [ngSwitch]="type">
     <ion-card class="bgCard" *ngSwitchCase="'followers'">      
         <app-followers></app-followers>
         <app-followers></app-followers>
@@ -51,3 +53,5 @@
   </div>
 
 </ion-content>
+
+<app-tab-menu></app-tab-menu>

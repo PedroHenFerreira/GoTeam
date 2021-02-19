@@ -44,6 +44,11 @@ export class PostServiceService {
     this.httpHeaders.headers['Authorization'] = 'Bearer ' + localStorage.getItem('userToken');
     return this.http.delete(this.apiUrl + 'deletePost/' + id, this.httpHeaders);
   }
+
+  getFollowingPostsUsers(){
+    this.httpHeaders.headers['Authorization'] = 'Bearer ' + localStorage.getItem('userToken');
+    return this.http.get(this.apiUrl + 'readPosts', this.httpHeaders);
+  }
   
 }
 

@@ -1,0 +1,31 @@
+<ion-header>
+</ion-header>
+
+<ion-content color='dark'>
+  <form [formGroup]='registerForm' (ngSubmit)='postEdit(post.id, registerForm)'>
+    <ion-grid class="grid">
+      <ion-row>
+        <ion-col>
+          <ion-icon class="close-icon" name='close-sharp' routerLink='/home'></ion-icon>
+        </ion-col>
+  
+        <ion-col>
+          <a href="/home"><ion-button class="post-button" type='submit' shape='round' color='secondary'>Postar</ion-button></a>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  
+    <div class="text-input">
+      <ion-textarea rows='40' clearOnEdit='true' placeholder='Edite sua postagem' formControlName='bodyText'></ion-textarea>
+    </div>
+  </form>
+  
+
+  <ion-footer class="footer">
+    <ion-toolbar class="toolbar" color='dark'>
+      <ion-icon class="image-icon" name="image-outline"></ion-icon>
+      <ion-icon class="video-icon" name='videocam-outline'></ion-icon>
+      <ion-icon class="link-icon" name='link-outline'></ion-icon>
+    </ion-toolbar>
+  </ion-footer>
+</ion-content>

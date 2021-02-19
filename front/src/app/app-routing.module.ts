@@ -64,7 +64,15 @@ const routes: Routes = [
     path: 'criar-post',
     loadChildren: () => import('./criar-post/criar-post.module').then( m => m.CriarPostPageModule),
     canActivate: [VisitanteGuard]
+  },  {
+    path: 'listar-todos-usuarios',
+    loadChildren: () => import('./listar-todos-usuarios/listar-todos-usuarios.module').then( m => m.ListarTodosUsuariosPageModule)
+  },
+  {
+    path: 'editar-post',
+    loadChildren: () => import('./editar-post/editar-post.module').then( m => m.EditarPostPageModule)
   }
+
 
 ];
 
