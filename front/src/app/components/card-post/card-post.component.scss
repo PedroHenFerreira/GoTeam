@@ -1,3 +1,8 @@
+.posts {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
 .post-feed {
     margin-top: 0vh;
     background-color: rgb(30, 30, 30);

@@ -18,8 +18,10 @@ class passportController extends Controller
         $success['token'] = $user->createToken('MyApp')->accessToken;
         return response()->json(['success' => $success, 'user' => $user], 200);
     }
-    public function login (Request $request)
-    {
+    
+    
+    
+    public function login (Request $request){
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)){
             $user = Auth::user();
@@ -30,17 +32,23 @@ class passportController extends Controller
                 "user"=>$user,
                 "token"=>$token
             ], 200);
-        }
+            }
         else {
             return response()->json([
                 "message"=>"Email ou senha inválidos."
             ], 500);
-        }
+            }
     }
+    
+    
+    
     public function getDetails (){
         $user = Auth::user();
         return response()->json(["user" => $user], 200);
     }
+    
+    
+    
     public function logout (){
         $accessToken = Auth::user()->token();
         DB::table('oauth_refresh_tokens')->where('access_token_id', $accessToken->id)->update(['revoked' => true]);

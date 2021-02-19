@@ -13,20 +13,42 @@ export class HomePage implements OnInit {
 
   user=[];
   isLoggedIn: boolean;
+  users=[];
+  postsList=[];
+
   logout: [];
 
   constructor(public autheticationService: AuthenticationServiceService,
-  public usuarioService: UsuarioServiceService, public postService: PostServiceService) {}
+  public usuarioService: UsuarioServiceService, public postService: PostServiceService) {this.listPosts();}
 
   ngOnInit() {
     this.getDetails();
     this.isLoggedIn= this.usuarioService.isLogged();
+    this.listPosts();
+  }
+
+  ionViewWillEnter(){
+    this.listPosts();
   }
 
   getDetails(){
     this.usuarioService.getDetails().subscribe((res) => {
       this.user = res.user;
       console.log(this.user);
+    })
+  }
+
+  listPosts(){
+    this.postService.listPosts().subscribe((res) => {
+      this.postsList = res.Sucesso;
+      console.log(this.postsList);
+    })
+  }
+
+  listUsers(){
+    this.usuarioService.listUsers().subscribe((res) => {
+      this.users = res.Sucesso;
+      console.log(this.users);
     })
   }
 
@@ -49,5 +71,10 @@ export class HomePage implements OnInit {
   //     console.log(this.logout);
   //   });
   // }
+
+  postDeleted(event){
+    this.listPosts();
+    console.log(event);
+  }
 
 }

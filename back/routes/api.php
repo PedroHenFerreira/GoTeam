@@ -22,7 +22,7 @@ use App\Http\Controllers\PassportController;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-
+//users
 Route::post('users', [userController::class, 'createUser']);
 Route::put('users/{id}', [userController::class, 'updateUser']);
 Route::get('users', [userController::class, 'readUsers']);
@@ -30,13 +30,13 @@ Route::get('users/{id}', [userController::class, 'readUser']);
 Route::delete('users/{id}', [userController::class, 'deleteUser']);
 Route::get('user/{name}', [userController::class, 'searchUser']);
 
-
+//post
 Route::post('post', [postController::class, 'createPost']);
 Route::get('post', [postController::class, 'readPosts']);
 Route::get('post/{id}', [postController::class, 'readPost']);
 
 
-
+//evento
 Route::post('event', [eventController::class, 'createEvent']);
 Route::put('event/{id}', [eventController::class, 'updateEvent']);
 Route::get('event', [eventController::class, 'readEvent']);
@@ -45,16 +45,16 @@ Route::delete('event/{id}', [eventController::class, 'deleteEvent']);
 
 
 
-
+//comments
 Route::get('comment', [commentController::class, 'readComment']);
 Route::get('comment/{id}', [commentController::class, 'readComment']);
 
 
-
+//register e login
 Route::post('register', [passportController::class, 'register']);
 Route::post('login', [passportController::class, 'login']);
 
-
+//ações que necessitam autenticação
 Route::group(['middleware' => 'auth:api'], function(){
     Route::get('logout', [passportController::class, 'logout']);
     Route::get('getDetails', [passportController::class, 'getDetails']);
@@ -64,4 +64,13 @@ Route::group(['middleware' => 'auth:api'], function(){
     Route::post('comment/{post_id}', [commentController::class, 'createComment']);
     Route::put('comment/{id}', [commentController::class, 'updateComment']);
     Route::delete('comment/{id}', [commentController::class, 'deleteComment']);
+    //seguir ou deixar de seguir um usuario
+    Route::post('follow/{id}', [userController::class, 'followUser']);
+    Route::post('unfollow/{id}', [userController::class, 'unfollowUser']);
+    //Listar posts de usuarios que você segue
+    Route::get('readPosts', [postController::class, 'readFollowingPosts']);
+    //Convidar usuario 
+    Route::post('inviteUser/{id}', [userController::class, 'inviteUser']);
+    //Listar posts nos perfis 
+    Route::get('profilePosts/{id}', [postController::class, 'profilePosts']);
 });

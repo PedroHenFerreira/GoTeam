@@ -55,6 +55,9 @@ class User extends Authenticatable
         $this->admin = $request->admin;
         $this->save();
     }
+    
+    
+    
     public function updateUser(Request $request){
         if ($request->name){
             $this->name = $request->name;
@@ -78,24 +81,46 @@ class User extends Authenticatable
 
     }
 
+    
     public function userInvites(){
-        return $this->belongsToMany('App\Models\User', 'invites', 'invited', 'makeInvite' );
+        return $this->belongsToMany('App\Models\User', 'invites', 'makeInvite', 'invited' );
         }
 
+    
+    
     public function userInvited(){
          return $this->belongsToMany('App\Models\User', 'invites', 'invited', 'makeInvite' );
-            }
+    }
 
-     public function post(){
+     
+    
+    public function post(){
          return $this->hasMany('App\Models\Post');
-        }
+    }
 
-     public function event(){
+     
+    
+    public function event(){
          return $this->hasMany('App\Models\Event');
-        }
+    }
+    
+    
     public function comment(){
         return $this->hasMany('App\Models\Comment');
+    }
+
+    
+    
+    public function userFollower(){
+        return $this->belongsToMany('App\Models\User','follows', 'follower', 'following');
+    }
+    
+    
+    public function userFollowing(){
+        return $this->belongsToMany('App\Models\User','follows', 'following', 'follower');
         }
+
+
 
 
 

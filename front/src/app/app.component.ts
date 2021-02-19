@@ -33,14 +33,14 @@ export class AppComponent {
       console.log(res);
       localStorage.removeItem('userToken');
       this.router.navigate(['/login']);
-    })
+    });
   }
 
   getDetails(){
     this.usuarioService.getDetails().subscribe((res) => {
       this.user = res.user;
       console.log(this.user);
-    })
+    });
   }
 
 

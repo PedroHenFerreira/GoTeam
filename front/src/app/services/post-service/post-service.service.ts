@@ -24,7 +24,7 @@ export class PostServiceService {
   }
 
   listPosts():Observable <any> {
-    return this.http.get(this.apiUrl + 'listPosts' + this.httpHeaders);
+    return this.http.get(this.apiUrl + 'post', this.httpHeaders);
   }
 
   listFollowingPosts():Observable <any> {

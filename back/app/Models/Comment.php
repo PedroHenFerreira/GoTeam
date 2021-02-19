@@ -17,6 +17,9 @@ class Comment extends Model
         $this->media = $request->media;
         $this->save();
     }
+    
+    
+    
     public function updateComment(Request $request){
         if ($request->bodyText){
             $this->bodyText = $request->bodyText;
@@ -25,10 +28,13 @@ class Comment extends Model
             $this->media = $request->media;
         }
         $this->save();
-     }
-     public function user(){
+    }
+     
+    
+    
+    public function user(){
         return $this->belongsTo('App\Models\User');
-       }
+    }
 
 
 }
