@@ -6,21 +6,22 @@
         <div class="infos">
           <ion-grid>
             <ion-row>
-              
-              
+    
                 <ion-col  id="menu_shaco" *ngIf="isLoggedIn">
                   <img src="../assets/icon/ShacoLoadScreen_7.jpg">
                 </ion-col>
-                <ion-col id="titles">
+                <ion-col id="titles" *ngIf="isLoggedIn">
                   <h3>{{user.name}}</h3>
                   <h6>@{{user.name}}</h6>
                 </ion-col>
             
-
-              
                 <ion-col id="visitante" *ngIf="!isLoggedIn">
                     <h3 class="visitanteText">Bem-vindo(a),</h3>
                     <h3 class="visitanteText2">Visitante</h3>
+                </ion-col>
+                <ion-col routerLink="/login" size="5" id="backToLogin" *ngIf="!isLoggedIn">
+                  <ion-icon class="logInIcon" size="large" name="log-in-outline"></ion-icon>
+                  <h3 class="backToLoginText">Voltar para tela de login</h3>
                 </ion-col>
               
 

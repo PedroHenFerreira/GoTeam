@@ -25,7 +25,7 @@ export class AppComponent {
   constructor(public authenticationService: AuthenticationServiceService,public router: Router,
   public usuarioService: UsuarioServiceService) {
     this.getDetails();
-    
+    this.isLoggedIn= this.usuarioService.isLogged();
   }
   
   logout(){
@@ -42,6 +42,8 @@ export class AppComponent {
       console.log(this.user);
     });
   }
+
+
 
 
 }
