@@ -49,4 +49,9 @@ export class UsuarioServiceService {
     this.httpHeaders.headers['Authorization'] = 'Bearer ' + localStorage.getItem('userToken');
     return this.http.post(this.apiUrl + 'unfollow/' + id, null, this.httpHeaders);
   }
+
+  likePost(id){
+    this.httpHeaders.headers['Authorization'] = 'Bearer ' + localStorage.getItem('userToken');
+    return this.http.post(this.apiUrl + 'like/' + id, null, this.httpHeaders);
+  }
 }

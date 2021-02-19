@@ -16,6 +16,7 @@ export class EditarPostPage implements OnInit {
   newPost = [];
   userDetails = [];
   postsList = [];
+  id: number;
 
   registerForm: FormGroup;
 
@@ -27,6 +28,8 @@ export class EditarPostPage implements OnInit {
   }
 
   ngOnInit() {
+    this.id = parseInt(localStorage.getItem('postId'));
+    console.log(this.id===3);
   }
 
   listPosts(){
