@@ -22,7 +22,7 @@
   <div class="feed-noticias">Feed de notícias:</div>
   <br><br><br><br><br>
   <div class="post">
-    <app-card-post *ngFor='let post of postsList' [post]='post' (deleted)='postDeleted($event)'></app-card-post>
+    <app-card-post *ngFor='let post of postsList' [post]='post' [user]='user' (deleted)='postDeleted($event)'></app-card-post>
   </div>
 </ion-content>
 
