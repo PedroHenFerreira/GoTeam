@@ -7,6 +7,7 @@ use App\Models\Post;
 use App\Models\User;
 use Auth;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\Facades\Auth as FacadesAuth;
 
 class postController extends Controller
 {
@@ -16,6 +17,9 @@ class postController extends Controller
         return response()->json(['Sucesso' => $post]);
     }
 
+    
+    
+   
     public function updatePost(Request $request, $id){
         $user = Auth::user();
         $post = Post::find($id);
@@ -24,15 +28,19 @@ class postController extends Controller
         return response()->json(['Sucesso' => $post]);}
         else {
         return response()->json('Erro', 403);
-          }
-        }
-        public function readPosts (Request $request){
+             }
+    }
+        
+    
+    
+    public function readPosts (Request $request){
         $post = Post::all();
         return response()->json(['Sucesso' => $post]);
-          }
+    }
 
 
-    public function readFollowingPosts (){
+    
+    public function readFollowingPosts(){
         $count = 0;
         $user = Auth::user();
         $following = $user->userFollowing()->get(['following']);
@@ -42,14 +50,29 @@ class postController extends Controller
           })->get();
           $todosOsPosts[$count] = $posts;
           $count++;
-          }
+                    }
         return response()->json([$todosOsPosts]);
-          }
+    }
+
+
+
+    public function profilePosts($id){
+      $user = User::find($id);
+      $posts = $user->post()->get();
+      return response()->json([$posts]);
+    }
+
+
+
+
     public function readPost (Request $request, $id){
         $post = Post::find($id);
         return response()->json(['Sucesso' => $post]);
-    }
-    public function deletePost ($id){
+      }
+    
+    
+    
+      public function deletePost ($id){
         $user = Auth::user();
         $post = Post::find($id);
         if ($post->user_id == $user->id)
@@ -57,8 +80,8 @@ class postController extends Controller
         return response()->json(['Sucesso']);}
         else {
         return response()->json('Erro', 403);
-        }
-    }
+             }
+      }
 
 
 }

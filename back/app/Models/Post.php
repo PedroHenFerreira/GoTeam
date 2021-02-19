@@ -20,6 +20,9 @@ class Post extends Model
         $this->save();
     }
 
+    
+    
+    
     public function updatePost(Request $request){
         if ($request->bodyText){
             $this->bodyText = $request->bodyText;
@@ -39,9 +42,12 @@ class Post extends Model
         $this->save();
     }
 
+    
+    
+    
     public function user(){
         return $this->belongsTo('App\Models\User');
-       }
+    }
 
 
 }
