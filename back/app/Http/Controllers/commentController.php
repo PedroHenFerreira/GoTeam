@@ -14,6 +14,8 @@ class commentController extends Controller
         return response()->json(['Sucesso' => $comment]);
     }
 
+    
+    
     public function updateComment(Request $request, $id){
         $user = Auth::user();
         $comment = Comment::find($id);
@@ -22,18 +24,24 @@ class commentController extends Controller
         return response()->json(['Sucesso' => $comment]);}
         else {
         return response()->json('Erro', 403);
-      }
+            }
 
     }
 
+    
+    
     public function readComments (Request $request){
         $comment = Comment::all();
         return response()->json(['Sucesso' => $comment]);
     }
+    
+    
     public function readComment (Request $request, $id){
         $comment = Comment::find($id);
         return response()->json(['Sucesso' => $comment]);
     }
+    
+    
     public function deleteComment (Request $request, $id){
         $user = Auth::user();
         $comment = Comment::find($id);
@@ -42,6 +50,6 @@ class commentController extends Controller
         return response()->json(['Sucesso']);}
         else {
         return response()->json('Erro', 403);
-      }
+            }
     }
 }
