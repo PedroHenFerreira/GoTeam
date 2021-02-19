@@ -1,0 +1,11 @@
+<ion-header class="ion-no-border">
+  <app-header></app-header>
+</ion-header>
+
+<ion-content>
+  <img class="img-bg" src="../../assets/GoTeam Imagens/Home-bg.png">
+
+  <app-usuario *ngFor='let user of users' [user]='user'></app-usuario>
+</ion-content>
+
+<app-tab-menu></app-tab-menu>

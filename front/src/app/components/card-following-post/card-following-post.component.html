@@ -22,7 +22,7 @@
           </ion-col>
 
           <ion-col *ngIf='user.id===post.user_id'>
-            <ion-icon class="edit-post-button" name='create-outline' [post_id]='post_id' (click)='toEditPost(post.id)'></ion-icon>
+            <ion-icon class="edit-post-button" name='create-outline'></ion-icon>
             <ion-icon class="delete-post-button" name='trash-outline' (click)='deletePost(post.id)'></ion-icon>
           </ion-col>
         </ion-row>
@@ -32,14 +32,14 @@
         <ion-row class="row">
           <ion-col>
             <div class="like">
-              <ion-icon class="button-like" name='heart-outline'></ion-icon>
+              <ion-icon class="button-like" name='heart-outline' ></ion-icon>
               <div class="num-like">912</div>
             </div>
           </ion-col>
     
           <ion-col>
             <div class="comment">
-              <a routerLink='/comentarios' (click)="getPostId(post.id)">
+              <a routerLink='/comentarios'>
                 <ion-icon class="button-comment" name='chatbox-outline'></ion-icon>
                 <div class="num-comment">700</div>
               </a>

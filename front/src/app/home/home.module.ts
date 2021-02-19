@@ -12,6 +12,7 @@ import { HeaderComponent } from '../components/header/header.component';
 import { CardEventoDestaqueComponent } from '../components/card-evento-destaque/card-evento-destaque.component'
 import { CardPostComponent } from '../components/card-post/card-post.component';
 import { TabMenuComponent } from '../components/tab-menu/tab-menu.component';
+import { CardFollowingPostComponent } from '../components/card-following-post/card-following-post.component';
 
 @NgModule({
   imports: [
@@ -20,6 +21,6 @@ import { TabMenuComponent } from '../components/tab-menu/tab-menu.component';
     IonicModule,
     HomePageRoutingModule
   ],
-  declarations: [HomePage, HeaderComponent, CardEventoDestaqueComponent, CardPostComponent, TabMenuComponent]
+  declarations: [HomePage, HeaderComponent, CardEventoDestaqueComponent, CardPostComponent, TabMenuComponent, CardFollowingPostComponent]
 })
 export class HomePageModule {}

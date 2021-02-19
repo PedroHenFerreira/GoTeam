@@ -33,11 +33,11 @@
     <!-- Essa tag cria condições para o botão na pag cadastro -->
     <div [ngSwitch]='cadastro[0].id'>
       <div *ngSwitchCase='1'>
-        <ion-button class="botao-enviar" size='large' color='light' (click)='prosseguirCadastro()'>{{buttonLabel}}</ion-button>
+        <ion-button class="botao-enviar" size='large' color='dark' (click)='prosseguirCadastro()'>{{buttonLabel}}</ion-button>
       </div>
 
       <div *ngSwitchCase='2'>
-        <ion-button class="botao-enviar" type='submit' size='large' color='light' (click)='prosseguirCadastro()' [disabled]='registerForm.invalid'>{{buttonLabel}}</ion-button>
+        <ion-button class="botao-enviar" type='submit' size='large' color='dark' (click)='prosseguirCadastro()' [disabled]='registerForm.invalid'>{{buttonLabel}}</ion-button>
       </div>
     </div>
 

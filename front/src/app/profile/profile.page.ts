@@ -40,7 +40,6 @@ export class ProfilePage implements OnInit {
   }
 
   ngOnInit() {
-    this.listFollowingPosts();
     this.getDetails();
   }
 
