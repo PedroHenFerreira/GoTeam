@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Comment;
 use Illuminate\Database\Eloquent\Builder;
 use Auth;
+use App\Models\Post;
 
 class commentController extends Controller
 {
